@@ -1,0 +1,56 @@
+.tm-verify-container {
+    height: 100%;
+    padding: 120px 25px;
+    background: aliceblue;
+    opacity: 0.9;
+    .tm-verify-elements {
+        display: grid;
+        width: 450px;
+        .tm-verify-header-text {
+            font-weight: 500;
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .tm-verify-body-text {
+            font-weight: 300;
+            font-size: 12px;
+        }
+        .tm-verify-middle-buttons {
+            width: 480px;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 20px 0px;
+            .tm-verify-enable-button {
+                width: 200px;
+                height: 50px;
+                font-size: 15px;
+                background: #49B8E7;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 300;
+            }
+            .tm-verify-disable-button {
+                width: 200px;
+                height: 50px;
+                font-size: 15px;
+                background: #01070a;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 300;
+                color: rgb(237, 245, 244);
+            }
+        }
+        .tm-verify-button {
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            background: #49B8E7;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    }
+}

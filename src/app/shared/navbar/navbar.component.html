@@ -1,0 +1,60 @@
+<nav class="tm-navbar-container">
+    <a class="" href="/"><img src="assets/img/navbar-logo.png" alt=""></a>
+    <div>
+        <mat-toolbar class="tm-navbar-toolbar">
+            <mat-nav-list class="list-horizontal">
+                <mat-list-item>
+                    <button (click)="navigateTo('inicio')" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.home' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button [matMenuTriggerFor]="verifyMenu" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.verify' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-menu #verifyMenu="matMenu" [overlapTrigger]="false">
+                    <button (click)="navigateTo('verificar/licencias')" mat-menu-item>
+                        {{'NAVBAR.licenses' | translate}}
+                    </button>
+                    <button (click)="navigateTo('verificar/permisos')" mat-menu-item>
+                        {{'NAVBAR.permissions' | translate}}
+                    </button>
+                </mat-menu>
+                <mat-list-item>
+                    <button (click)="navigateToExternalUrl()" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.repuve' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button [matMenuTriggerFor]="procedureMenu" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.procedure' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-menu #procedureMenu="matMenu" [overlapTrigger]="false">
+                    <button (click)="navigateTo('tramites/licencias')" mat-menu-item>
+                        {{'NAVBAR.licenses' | translate}}
+                    </button>
+                    <button (click)="navigateTo('tramites/permisos')" mat-menu-item>
+                        {{'NAVBAR.permissions' | translate}}
+                    </button>
+                </mat-menu>
+                <mat-list-item>
+                    <button (click)="navigateTo('comunicado')" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.comunicate' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button (click)="navigateTo('contacto')" class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.contact' | translate}}
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button class="tm-navbar-menu-button" mat-menu-item>
+                        {{'NAVBAR.dashboard' | translate}}
+                    </button>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-toolbar>
+    </div>
+</nav>

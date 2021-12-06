@@ -1,0 +1,17 @@
+<div class="tm-verify-container">
+    <div class="tm-verify-elements">
+        <p class="tm-verify-header-text">{{'VERIFY.verifyLicenses' | translate}}</p>
+        <div>
+            <p class="tm-verify-body-text">{{'VERIFY.bodyLicenses' | translate}}</p>
+        </div>
+        <div class="tm-verify-middle-buttons">
+            <button (click)="changePeriod()" [ngClass]="{'tm-verify-enable-button':firstPeriod,'tm-verify-disable-button':!firstPeriod}">{{'VERIFY.firstPeriod' | translate}}</button>
+            <button (click)="changePeriod()" [ngClass]="{'tm-verify-enable-button':secondPeriod,'tm-verify-disable-button':!secondPeriod}">{{'VERIFY.secondPeriod' | translate}}</button>
+        </div>
+        <mat-form-field class="tm-verify-name-inputs" appearance="outline">
+            <mat-label>{{'VERIFY.search' | translate}}</mat-label>
+            <input type="text" matInput placeholder="{{'VERIFY.search' | translate}}">
+        </mat-form-field>
+        <button class="tm-verify-button">{{'VERIFY.button' | translate}}</button>
+    </div>
+</div>

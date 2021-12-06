@@ -1,0 +1,20 @@
+.tm-navbar-container {
+    width: 100%;
+    height: 50px;
+    background: #F3F7FA;
+    position: fixed;
+    z-index: 1;
+    padding: 5px 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 0.8fr);
+}
+
+.tm-navbar-menu-button {
+    width: fit-content;
+    height: 50px;
+    background: transparent;
+    border: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}

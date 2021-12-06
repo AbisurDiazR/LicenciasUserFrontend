@@ -1,0 +1,50 @@
+{
+    "HOME": {
+        "verifyTitle": "Verifica tu Permiso, Licencia",
+        "procedureTitle": "Realiza tu Trámite",
+        "contactTitle": "Contáctanos",
+        "verifyBody": "Verifica la vigencia y autenticidad de los permisos y licencias expedidas por la dirección de tránsito y vialidad pública del Municipio de Cuautepec, Gro.",
+        "procedureBody": "Conoce los requisitos para tramitar tu permiso vehicular para circular sin placas por 30 días y tu licencia de conducir.",
+        "contactBody": "Tienes dudas o sugerencias, por favor contáctanos.",
+        "validityQuestion": "¿Deseas validar la autenticidad de tu permiso y/o licencia?",
+        "verifyButton": "Verificar Permiso",
+        "procedureButton": "Verificar Licencia",
+        "verifyDescribe": "Un portal respaldado oficialmente por el municipio de Cuautepec Guerrero, para recibir solicitudes de permisos vehiculares y licencias de manejo, brindar información para que realices tu trámite y verificar la autenticidad y vigencia de los permisos vehiculares y las licencias de manejo emitidas por este H. Ayuntamiento Municipal de Cuautepec Guerrero."
+    },
+    "NAVBAR": {
+        "home": "Inicio",
+        "verify": "Verificar",
+        "repuve": "Repuve",
+        "procedure": "Trámite",
+        "comunicate": "Comunicado",
+        "contact": "Contacto",
+        "dashboard": "Panel Administrativo",
+        "licenses": "Licencias",
+        "permissions": "Permisos"
+    },
+    "ADDRESS": {
+        "addressHeader": "Dirección",
+        "addressBody": "Calle, Colonia C.P. 00000, Cuatepec, Gro., México",
+        "businessHours": "Horario de atención",
+        "businessHoursBody": "Lunes a Viernes de 9:00 am - 6:00 pm y Sábados de 9:00 am - 2:00 pm",
+        "officePhone": "Teléfono de oficina",
+        "officePhoneBody": "XXX-XXX-XXXX",
+        "emailHeader": "Correo Electrónico",
+        "emailBody": "foyidi3988@servergem.com"
+    },
+    "VERIFY": {
+        "verify": "Verificar",
+        "verifyPermission": "Verifica tu Permiso",
+        "bodyPermission": "Verifica la vigencia y autenticidad de los permisos expedidos por la dirección de tránsito y vialidad pública del Municipio de Cuatepec, Gro.",
+        "verifyLicenses": "Verifica tu Licencia",
+        "bodyLicenses": "Verifica la vigencia y autenticidad de las licencias expedidas por la dirección de tránsito y vialidad pública del Municipio de Copalillo, Gro.",
+        "search": "Búsqueda por folio",
+        "button": "Verificar",
+        "firstPeriod": "Administración 2021-2024",
+        "secondPeriod": "Administración 2018-2021"
+    },
+    "PROCEDURE": {
+        "LICENCESES": {},
+        "PERMISSIONS": {}
+    }
+}

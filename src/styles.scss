@@ -1,1 +1,82 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$LicenciasUserFrontend-primary: mat.define-palette(mat.$indigo-palette);
+$LicenciasUserFrontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// The warn palette is optional (defaults to red).
+$LicenciasUserFrontend-warn: mat.define-palette(mat.$red-palette);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$LicenciasUserFrontend-theme: mat.define-light-theme(( color: ( primary: $LicenciasUserFrontend-primary, accent: $LicenciasUserFrontend-accent, warn: $LicenciasUserFrontend-warn, )));
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($LicenciasUserFrontend-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: aliceblue;
+    background-image: url('/assets/img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tm-header-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tm-general-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: gray;
+}
+
+.tm-home-button {
+    width: 120px;
+    height: 45px;
+    font-size: 12px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid chocolate;
+    margin: 15px 15px;
+    cursor: pointer;
+}
+
+
+/* here's what you're looking for B-) */
+
+mat-nav-list.list-horizontal {
+    padding: 0;
+    .mat-list-item {
+        display: inline-block;
+        height: auto;
+        width: auto;
+    }
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    height: unset !important;
+}
+
+.mat-list-item .mat-list-item-content {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}

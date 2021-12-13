@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LicensesComponent } from './licenses/licenses.component';
-import { PermissionsComponent } from './permissions/permissions.component';
+import { ProcedureComponent } from './procedure/procedure.component';
 
 const routes: Routes = [
   {
-    path: 'permisos',
-    component: PermissionsComponent
-  },
-  {
-    path: 'licencias',
-    component: LicensesComponent
+    path: '',
+    component: ProcedureComponent
   }
 ];
 

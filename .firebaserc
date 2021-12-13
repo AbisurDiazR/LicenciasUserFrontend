@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "transito-municipal-cuautepec"
+  },
+  "targets": {
+    "transito-municipal-cuautepec": {
+      "hosting": {
+        "LicenciasUserFrontend": [
+          "transito-municipal-cuautepec"
+        ]
+      }
+    }
   }
 }

@@ -1,0 +1,16 @@
+.tm-procedure-container {
+    height: fit-content;
+    padding: 150px 25px;
+    background: aliceblue;
+    opacity: 0.9;
+    .tm-procedure-flex {
+        display: flex;
+        justify-content: space-evenly;
+        .tm-procedjure-grid {
+            .tm-title {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

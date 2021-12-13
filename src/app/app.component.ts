@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -17,7 +18,8 @@ export class AppComponent {
     private _navigation: Router,
     private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
-    private _translate: TranslateService
+    private _translate: TranslateService,
+    public firestore: AngularFirestore
   ){
     this._translate.setDefaultLang(DEFAULT_LANGUAGE);
     this._translate.use(DEFAULT_LANGUAGE);

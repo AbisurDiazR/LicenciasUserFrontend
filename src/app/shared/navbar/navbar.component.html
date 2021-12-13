@@ -27,18 +27,10 @@
                     </button>
                 </mat-list-item>
                 <mat-list-item>
-                    <button [matMenuTriggerFor]="procedureMenu" class="tm-navbar-menu-button" mat-menu-item>
+                    <button (click)="navigateTo('tramites')" class="tm-navbar-menu-button" mat-menu-item>
                         {{'NAVBAR.procedure' | translate}}
                     </button>
                 </mat-list-item>
-                <mat-menu #procedureMenu="matMenu" [overlapTrigger]="false">
-                    <button (click)="navigateTo('tramites/licencias')" mat-menu-item>
-                        {{'NAVBAR.licenses' | translate}}
-                    </button>
-                    <button (click)="navigateTo('tramites/permisos')" mat-menu-item>
-                        {{'NAVBAR.permissions' | translate}}
-                    </button>
-                </mat-menu>
                 <mat-list-item>
                     <button (click)="navigateTo('comunicado')" class="tm-navbar-menu-button" mat-menu-item>
                         {{'NAVBAR.comunicate' | translate}}

@@ -1,0 +1,79 @@
+.tm-dashboard {
+    height: -webkit-fill-avalaible;
+    width: 100%;
+    .tm-dashboard-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .tm-dashboard-sidebar {
+            width: 250px;
+            background: blue;
+            .tm-dashboard-sidebar-icon-container {
+                width: 100%;
+                display: grid;
+                grid-template-rows: 40px auto 67px;
+                justify-content: center;
+                .tm-dashboard-sidebar-icon {
+                    width: 130px;
+                    height: 37px;
+                    grid-row: 2;
+                }
+            }
+            .tm-dashboard-sidebar-profile {
+                display: grid;
+                grid-template-columns: 37px auto auto auto 37px;
+                .tm-dashboard-sidebar-profile-icon {
+                    width: 36px;
+                    height: 36px;
+                    grid-column: 2;
+                }
+                .tm-dashboard-sidebar-profile-text {
+                    display: grid;
+                    grid-template-rows: 19px 19px;
+                    grid-column: 3;
+                    .tm-dashboard-sidebar-profile-text-email {
+                        width: 100px;
+                        p {
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                .tm-dropdown-btn {
+                    background: transparent;
+                    border-style: none;
+                    .tm-dashboard-sidebar-down-icon {
+                        cursor: pointer;
+                        width: 20px;
+                        height: 20px;
+                        grid-column: 4;
+                    }
+                }
+            }
+            .tm-sidenavlist {
+                display: grid;
+                justify-content: center;
+                row-gap: 5px;
+                margin-top: 32px;
+                .tm-sidenavlist-item {
+                    width: 223px;
+                    height: 42px;
+                    cursor: pointer;
+                    .tm-sidenavlist-icons {
+                        display: flex;
+                        .tm-sidenavlist-icon {
+                            height: 20px !important;
+                            width: 20px !important;
+                        }
+                        .tm-sidenavlist-title {
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

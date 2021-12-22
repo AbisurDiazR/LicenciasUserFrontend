@@ -18,10 +18,20 @@ import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { MatButtonModule } from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
+
+import { NgxFileDropModule } from 'ngx-file-drop';
+import { PermissionsComponent } from './permissions/permissions.component';
+import { LicensesComponent } from './licenses/licenses.component';
+
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -31,7 +41,10 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   declarations: [
     CarouselComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    NewUserDialogComponent,
+    PermissionsComponent,
+    LicensesComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +61,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatListModule,
     MatStepperModule,
     CdkStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatDialogModule,
+    NgxFileDropModule
   ],
   exports: [
     HttpClientModule,
@@ -67,7 +86,16 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatListModule,
     MatStepperModule,
     CdkStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatDialogModule,
+    NewUserDialogComponent,
+    NgxFileDropModule,
+    PermissionsComponent,
+    LicensesComponent
   ]
 })
 export class SharedModule { }

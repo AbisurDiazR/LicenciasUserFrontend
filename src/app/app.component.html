@@ -1,3 +1,50 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<ng-container *ngIf="loginService.loggedIn(); else loggedIn">
+    <div *ngIf="userData" class="tm-dashboard">
+        <mat-drawer-container color="primary" class="tm-dashboard-container" autosize>
+            <mat-drawer class="tm-dashboard-sidebar" mode="side" opened>
+                <div class="tm-dashboard-sidebar-icon-container">
+                    <mat-icon class="tm-dashboard-sidebar-icon" svgIcon="ic-group"></mat-icon>
+                </div>
+                <div class="mat-typography tm-dashboard-sidebar-profile">
+                    <mat-icon class="tm-dashboard-sidebar-profile-icon" svgIcon="ic-user"></mat-icon>
+                    <div class="tm-dashboard-sidebar-profile-text">
+                        <p class="tm-font-btn-text">{{user.rol}}</p>
+                        <div class="tm-dashboard-sidebar-profile-text-email">
+                            <p class="tm-font-email">{{user.nombre}}</p>
+                        </div>
+                    </div>
+                    <button class="tm-dropdown-btn" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <mat-icon class="tm-dashboard-sidebar-down-icon" svgIcon="ic-down"></mat-icon>
+                    </button>
+                </div>
+                <mat-menu class="mat-typography" #menu="matMenu">
+                    <button (click)="logout()" mat-menu-item>
+                        <span class="tm-font-link-text">{{'CONTROL.logout' | translate}}</span>
+                    </button>
+                </mat-menu>
+                <mat-nav-list class="tm-sidenavlist">
+                    <!--<mat-list-item class="tm-sidenavlist-item" *ngFor="let list of listas" [routerLinkActive]="['item-active']" routerLink="{{list.route}}">
+                        <div class="tm-sidenavlist-icons">
+                            <mat-icon class="tm-sidenavlist-icon" matListIcon svgIcon="{{list.icon}}"></mat-icon>
+                            <p class="tm-sidenavlist-title tm-font-naitem-title">{{list.label | translate}}</p>
+                        </div>
+                    </mat-list-item>-->
+                    <mat-list-item class="tm-sidenavlist-item" *ngFor="let list of user.funciones" [routerLinkActive]="['item-active']" routerLink="{{list.route}}">
+                        <div class="tm-sidenavlist-icons">
+                            <mat-icon class="tm-sidenavlist-icon" matListIcon svgIcon="{{list.icon}}"></mat-icon>
+                            <p class="tm-sidenavlist-title tm-font-naitem-title">{{list.label | translate}}</p>
+                        </div>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-drawer>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-container>
+    </div>
+</ng-container>
+<ng-template #loggedIn>
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</ng-template>

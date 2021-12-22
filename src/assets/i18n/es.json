@@ -46,5 +46,74 @@
     "PROCEDURE": {
         "rigthTitle": "REQUISITOS PARA TRAMITAR TU PERMISO VEHICULAR",
         "leftTitle": "REQUISITOS PARA TRAMITAR TU LICENCIA DE CONDUCIR"
+    },
+    "CONTROL": {
+        "acceessKeys": "Credenciales de Acceso",
+        "email": "Correo Electrónico",
+        "emailHint": "Correo Electrónico",
+        "password": "Contraseña",
+        "passwordHint": "Contraseña",
+        "remindmeCheck": "Recordarme",
+        "loginButton": "Iniciar Sesión",
+        "MASTER": {
+            "masterName": "Bienvenido",
+            "usersTitle": "Usuarios",
+            "dropHere": "Arrastrar aquí",
+            "or": " ó ",
+            "selectFile": "Seleccione archivo",
+            "formatFile": "Formato xlsx"
+        },
+        "columnsTable": {
+            "uid": "Id",
+            "email": "Correo Electrónico",
+            "name": "Nombre",
+            "rol": "Jerarquía",
+            "edit": "Editar",
+            "delete": "Borrar"
+        },
+        "inputSearch": "Buscar",
+        "inputSearchHint": "Buscar por nombre, correo... ",
+        "allOption": "Todos",
+        "enableOption": "Activos",
+        "disableOption": "Inactivos",
+        "logout": "Cerrar Sesión",
+        "createUser": "Crear Usuario"
+    },
+    "DIALOG": {
+        "typeUser": "Tipo de usuario",
+        "buttonCancel": "Cancelar",
+        "buttonCreate": "Crear"
+    },
+    "LICENSES": {
+        "name": "Ingrese el nombre",
+        "lastName": "Ingrese los apellidos",
+        "birthDate": "Ingrese la fecha de nacimiento",
+        "curp": "Ingrese la CURP o el RFC",
+        "bloodType": "Tipo de sangre",
+        "alergies": "Alergías",
+        "nationality": "Nacionalidad",
+        "address": "Dirección",
+        "street": "Ingresa la calle",
+        "colony": "Ingresa la colonia",
+        "city": "Ingresa la ciudad",
+        "state": "Ingresa el estado",
+        "contactEmergency": "Contacto de emergencia",
+        "contactPhone": "Ingresa el teléfono del Contacto"
+    },
+    "PERMISSIONS": {
+        "title": "Permiso",
+        "vehicleData": "Datos del Vehículo",
+        "vehicleBrand": "Ingrese la marca",
+        "vehicleLine": "Ingresa la línea",
+        "vehicleModel": "Ingresa el modelo",
+        "vehicleColor": "Ingresa el color",
+        "vehicleSerialNumber": "Ingresa el número de serie",
+        "vehicleMotorNumber": "Ingresa el número de motor",
+        "solicitantData": "Datos del Solicitante",
+        "solicitantName": "Ingresa el nombre completo",
+        "solicitantAddress": "Ingresa el domicilio",
+        "invoice": "Ingresa el folio",
+        "import": "Ingresa el importe",
+        "expeditionDate": "Fecha de expedición"
     }
 }

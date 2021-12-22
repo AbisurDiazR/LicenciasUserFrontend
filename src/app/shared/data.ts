@@ -199,3 +199,18 @@ export const FORMATS = [
     {clave: 1, name: 'Estatal'}
 ]
 export const DEFAULT_LANGUAGE = 'es';
+export const ADMINITEMS = [
+    {route: 'usuarios', icon: 'ic-users', label: 'Usuarios'},
+    {route: 'licencias', icon: 'ic-licenses', label: 'Licencias'}
+]
+export const MASTER_OPTIONS = [
+    {label: 'Usuarios'},
+    {label: 'Folios'}
+];
+
+export const PRESIDENT_OPTIONS = [
+    {icon: 'ic-users', label: 'Usarios'},
+    {icon: 'ic-folio', label: 'Folios'}
+];
+
+export const MASTER_COLUMNS = ['uid', 'correo', 'nombre','rol','dots'];

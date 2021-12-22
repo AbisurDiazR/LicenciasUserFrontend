@@ -1,0 +1,42 @@
+.tm-control-container {
+    height: fit-content;
+    padding: 150px 25px;
+    .tm-control-login-elements {
+        display: grid;
+        width: 450px;
+        .tm-control-login-title {
+            font-size: 1.2em;
+            letter-spacing: -0.025em;
+            font-weight: 600;
+            line-height: 1.75em;
+            margin-bottom: 1em;
+        }
+        .tm-control-login-form {
+            display: grid;
+        }
+        .tm-control-loginButton {
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            background: #49B8E7;
+            border: none;
+            border-radius: 8px;
+            color: black;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .tm-control-loginButton-disbled {
+            width: 250px;
+            height: 50px;
+            font-size: 20px;
+            background: #d8e2e7;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+    }
+}
+
+.tm-dashboard-container {
+    padding: 80px 0;
+}

@@ -1,0 +1,24 @@
+<form [formGroup]="formUser">
+    <mat-form-field appearance="outline">
+        <mat-label>{{'CONTROL.columnsTable.email' | translate}}</mat-label>
+        <input formControlName="correo" type="email" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>{{'CONTROL.columnsTable.name' | translate}}</mat-label>
+        <input formControlName="nombre" type="text" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>{{'CONTROL.password' | translate}}</mat-label>
+        <input formControlName="password" type="password" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>{{'DIALOG.typeUser' | translate}}</mat-label>
+        <mat-select formControlName="rol">
+            <mat-option *ngFor="let type of userTypes" value="{{type.type}}">{{type.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</form>
+<div class="tm-dialog-buttons">
+    <button (click)="cancel()" class="tm-dialog-button-cancel">{{'DIALOG.buttonCancel' | translate}}</button>
+    <button (click)="create()" class="tm-dialog-button-create">{{'DIALOG.buttonCreate' | translate}}</button>
+</div>

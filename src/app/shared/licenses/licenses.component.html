@@ -1,0 +1,117 @@
+<div class="tm-licenses-form">
+    <form [formGroup]="formLicenses">
+        <h1>{{'PERMISSIONS.solicitantData' | translate}}</h1>
+        <div class="lm-licenses-fields-group">
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
+                    <input formControlName="name" matInput placeholder="{{'LICENSES.name' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.lastName' | translate}}</mat-label>
+                    <input formControlName="lastName" matInput placeholder="{{'LICENSES.lastName' | translate}}">
+                </mat-form-field>
+            </div>
+
+
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.birthDate' | translate}}</mat-label>
+                    <input formControlName="birthDate" matInput placeholder="{{'LICENSES.birthDate' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.curp' | translate}}</mat-label>
+                    <input formControlName="curp" matInput placeholder="{{'LICENSES.curp' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.bloodType' | translate}}</mat-label>
+                    <input formControlName="bloodType" matInput placeholder="{{'LICENSES.bloodType' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.alergies' | translate}}</mat-label>
+                    <input formControlName="alergies" matInput placeholder="{{'LICENSES.alergies' | translate}}">
+                </mat-form-field>
+            </div>
+
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.nationality' | translate}}</mat-label>
+                    <input formControlName="nationality" matInput placeholder="{{'LICENSES.nationality' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+        <h1>{{'LICENSES.address' | translate}}</h1>
+        <div class="lm-licenses-fields-group-two">
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.street' | translate}}</mat-label>
+                    <input formControlName="street" matInput placeholder="{{'LICENSES.street' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.colony' | translate}}</mat-label>
+                    <input formControlName="colony" matInput placeholder="{{'LICENSES.colony' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.city' | translate}}</mat-label>
+                    <input formControlName="city" matInput placeholder="{{'LICENSES.city' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.state' | translate}}</mat-label>
+                    <input formControlName="estate" matInput placeholder="{{'LICENSES.state' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+        <h1>{{'LICENSES.contactEmergency' | translate}}</h1>
+        <div class="lm-licenses-fields-group-two">
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
+                    <input formControlName="contactName" matInput placeholder="{{'LICENSES.name' | translate}}">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.contactPhone' | translate}}</mat-label>
+                    <input formControlName="contactPhone" matInput placeholder="{{'LICENSES.contactPhone' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+        <h1>Licencia</h1>
+        <div class="lm-licenses-fields-group-three">
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
+                    <input formControlName="type" matInput placeholder="{{'LICENSES.name' | translate}}">
+                </mat-form-field>
+
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.lastName' | translate}}</mat-label>
+                    <input formControlName="validity" matInput placeholder="{{'LICENSES.lastName' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-licenses-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
+                    <input formControlName="expeditionDate" matInput placeholder="{{'LICENSES.name' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <div class="tm-buttons-container">
+        <button class="tm-buttons-cancel">Cancelar</button>
+        <button (click)="save()" class="tm-buttons-save">Guardar</button>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="tm-permissions-form">
+    <form [formGroup]="formPermission">
+        <h1>{{'PERMISSIONS.vehicleData' | translate}}</h1>
+        <div class="lm-permissions-fields-group">
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleBrand' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleBrand' | translate}}">
+                </mat-form-field>
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleLine' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleLine' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleModel' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleModel' | translate}}">
+                </mat-form-field>
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleColor' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleColor' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleSerialNumber' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleSerialNumber' | translate}}">
+                </mat-form-field>
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.vehicleMotorNumber' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.vehicleMotorNumber' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h1>{{'PERMISSIONS.solicitantData' | translate}}</h1>
+        <div class="lm-permissions-fields-group-two">
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.solicitantName' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.solicitantName' | translate}}">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.solicitantAddress' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.solicitantAddress' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+        <h1>{{'PERMISSIONS.title' | translate}}</h1>
+        <div class="lm-permissions-fields-group-three">
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.invoice' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.invoice' | translate}}">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.import' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.import' | translate}}">
+                </mat-form-field>
+            </div>
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'PERMISSIONS.expeditionDate' | translate}}</mat-label>
+                    <input matInput placeholder="{{'PERMISSIONS.expeditionDate' | translate}}">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+    <div class="tm-buttons-container">
+        <button class="tm-buttons-cancel">Cancelar</button>
+        <button (click)="save()" class="tm-buttons-save">Guardar</button>
+    </div>
+</div>

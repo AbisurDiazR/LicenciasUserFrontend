@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './services/auth.service';
 import { DEFAULT_LANGUAGE } from './shared/data';
 
 @Component({
@@ -11,15 +12,18 @@ import { DEFAULT_LANGUAGE } from './shared/data';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'LicenciasUserFrontend';
+  user: any;
+  userData: boolean = false;
 
   public constructor(
     private _navigation: Router,
     private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
     private _translate: TranslateService,
-    public firestore: AngularFirestore
+    public firestore: AngularFirestore,
+    public loginService: AuthService
   ){
     this._translate.setDefaultLang(DEFAULT_LANGUAGE);
     this._translate.use(DEFAULT_LANGUAGE);
@@ -31,7 +35,23 @@ export class AppComponent {
     .addSvgIcon('ic-linkedin',this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/linkedin.svg'))
     .addSvgIcon('ic-email',this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-mail.svg'))
     .addSvgIcon('ic-time',this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-time.svg'))
-    .addSvgIcon('ic-location',this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-location.svg'));
+    .addSvgIcon('ic-location',this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-location.svg'))
+    .addSvgIcon('ic-users', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-users.svg'))
+    .addSvgIcon('ic-licenses', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-licenses.svg'))
+    .addSvgIcon('ic-user', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-user.svg'))
+    .addSvgIcon('ic-group', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-group.svg'))
+    .addSvgIcon('ic-down', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-down.svg'))
+    .addSvgIcon('ic-menu', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/3-points.svg'))
+    .addSvgIcon('ic-search', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/search.svg'))
+    .addSvgIcon('ic-logout', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/logout.svg'))
+    .addSvgIcon('ic-folio', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/ic-folios.svg'));
+  }
+  ngOnInit(): void {
+    this.loginService.getUserById(localStorage.getItem('uid')).subscribe((usr: any) => {
+      this.user = {uid: usr.id, ...usr.data()};
+      this.userData = true;
+      console.log(this.user.funciones);
+    });
   }
 
   goToPermissions() { 
@@ -40,5 +60,10 @@ export class AppComponent {
 
   goToLicenses() { 
     this._navigation.navigate(['/tramites/licencias']);
+  }
+
+  public logout(){
+    this.loginService.logout();
+    this._navigation.navigate(['/inicio']);
   }
 }

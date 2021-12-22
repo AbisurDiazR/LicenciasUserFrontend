@@ -1,0 +1,17 @@
+<div class="tm-control-container">
+    <div class="tm-control-login-elements">
+        <p class="tm-control-login-title">{{'CONTROL.acceessKeys' | translate}}</p>
+        <form [formGroup]="formCredentials" class="tm-control-login-form">
+            <mat-form-field class="tm-control-name-inputs" appearance="outline">
+                <mat-label>{{'CONTROL.email' | translate}}</mat-label>
+                <input formControlName="email" type="email" matInput placeholder="{{'CONTROL.emailHint' | translate}}">
+            </mat-form-field>
+            <mat-form-field class="tm-control-name-inputs" appearance="outline">
+                <mat-label>{{'CONTROL.password' | translate}}</mat-label>
+                <input formControlName="password" type="password" matInput placeholder="{{'CONTROL.passwordHint' | translate}}">
+            </mat-form-field>
+        </form>
+        <button (click)="login()" [disabled]="!formCredentials.valid" [ngClass]="{'tm-control-loginButton': formCredentials.valid, 'tm-control-loginButton-disbled': !formCredentials.valid}">{{'CONTROL.loginButton'
+            | translate}}</button>
+    </div>
+</div>

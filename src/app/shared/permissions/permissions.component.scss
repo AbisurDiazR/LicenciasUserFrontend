@@ -1,0 +1,60 @@
+.tm-permissions-form {
+    width: 950px;
+    height: fit-content;
+    padding: 15px 35px;
+    .lm-permissions-fields-group {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        .lm-permissions-field {
+            display: flex;
+            justify-content: space-evenly;
+            .tm-field {
+                width: 450px;
+            }
+        }
+    }
+    .lm-permissions-fields-group-two {
+        display: grid;
+        .lm-permissions-field {
+            display: flex;
+            justify-content: space-evenly;
+            .tm-field {
+                width: 450px;
+            }
+        }
+    }
+    .lm-permissions-fields-group-three {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        .lm-permissions-field {
+            display: flex;
+            justify-content: space-evenly;
+            .tm-field {
+                width: 450px;
+            }
+        }
+    }
+}
+
+.tm-buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    .tm-buttons-cancel {
+        width: 350px;
+        height: 50px;
+        background: transparent;
+        border: 1px solid red;
+        color: black;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    .tm-buttons-save {
+        width: 350px;
+        height: 50px;
+        background: aliceblue;
+        border: 1px solid black;
+        color: black;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}

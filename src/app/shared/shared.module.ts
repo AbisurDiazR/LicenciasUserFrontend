@@ -21,6 +21,10 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { CarouselComponent } from './carousel/carousel.component';
 import { FooterComponent } from './footer/footer.component';
@@ -32,6 +36,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { LicensesComponent } from './licenses/licenses.component';
 
+import { NgxNumToWordsModule } from 'ngx-num-to-words';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -67,7 +72,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatSidenavModule,
     MatTableModule,
     MatDialogModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatCardModule,
+    NgxNumToWordsModule,
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   exports: [
     HttpClientModule,
@@ -95,7 +106,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NewUserDialogComponent,
     NgxFileDropModule,
     PermissionsComponent,
-    LicensesComponent
+    LicensesComponent,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatCardModule,
+    NgxNumToWordsModule,
+    MatSnackBarModule,
+    MatProgressBarModule
   ]
 })
 export class SharedModule { }

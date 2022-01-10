@@ -1,0 +1,136 @@
+<div class="tm-buttons-container">
+    <p class="tm-buttons-container-text">{{'BANNERS.lastUpdate' | translate}} : {{lastUpdate}}</p>
+    <button (click)="updatebanners()" [ngClass]="{'tm-buttons-container-active':bannersForm.valid, 'tm-buttons-container-inactive': !bannersForm.valid}">{{'BANNERS.save'
+        | translate}}</button>
+</div>
+<div class="tm-grid-image-container">
+    <!--First banner-->
+    <div class="tm-rectangle">
+        <p class="tm-size-16 tm-color-tmrigablue tm-raleway-medium-font">{{'BANNERS.lowLevel' | translate}}</p>
+        <div class="tm-rectangle-image">
+            <ngx-file-drop *ngIf="filePathOne === undefined" dropZoneLabel="{{'BANNERS.dropHere' | translate}}" (onFileDrop)="dropped($event)">
+                <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                    <p class="tm-row-one tm-size-14 tm-color-tmrigablue tm-raleway-semi-bold-font tm-text-align-center">
+                        {{'BANNERS.dropHere' | translate}}</p>
+                    <p class="tm-row-two tm-text-align-center">{{'BANNERS.or' | translate}}</p>
+                    <button [ngClass]="{'tm-button-disabled' : showProgressOne, 'tm-button-enabled': !showProgressOne }" [disabled]="showProgressOne" type="button" (click)="openFileSelector()">
+                        <p class="tm-size-14 tm-color-solid-basic-white-style">
+                            {{'BANNERS.selectImage' | translate}}
+                        </p>
+                    </button>
+                    <p class="tm-raleway-light-font tm-row-four tm-size-12 tm-color-tmrigablue tm-text-align-center">
+                        {{'BANNERS.formatImage' | translate}}</p>
+                </ng-template>
+            </ngx-file-drop>
+            <div class="tm-image-container" *ngIf="filePathOne !== undefined">
+                <img src="{{filePathOne}}" alt="">
+                <div *ngIf="showFinishedOne" class="tm-image-name">
+                    <mat-icon svgIcon="ic-picture-on"></mat-icon>
+                    <div class="tm-image-text-cotainer">
+                        <p class="tm-size-12 tm-color-tmrigablue tm-raleway-medium-font">{{bannerNameOne}}</p>
+                    </div>
+                    <mat-icon (click)="deleteImageOne()" class="tm-ic-delete" svgIcon="ic-delete"></mat-icon>
+                </div>
+            </div>
+            <div *ngIf="showProgressOne" class="tm-progress-bar-container">
+                <p class="tm-size-12 tm-color-tmrigablue">{{'BANNERS.uploading' | translate}} {{progressOne}} %</p>
+                <mat-progress-bar mode="determinate" [value]="progressOne">
+                </mat-progress-bar>
+                <div class="tm-progress-bar-filename">
+                    <mat-icon *ngIf="progressOne > 10" svgIcon="ic-picture-start"></mat-icon>
+                    <mat-icon *ngIf="progressOne < 10" svgIcon="ic-picture"></mat-icon>
+                    <div class="tm-progress-bar-text-cotainer">
+                        <p [ngClass]="{'tm-color-solid-basic-white-style' : progressOne > 10, 'tm-color-tmrigablue' : progressOne < 10}" class="tm-size-12 tm-raleway-medium-font">{{bannerNameOne}}</p>
+                    </div>
+                    <mat-icon *ngIf="progressOne === 100" svgIcon="ic-uploaded"></mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Second banner-->
+    <div class="tm-rectangle">
+        <p class="tm-size-16 tm-color-tmrigablue tm-raleway-medium-font">{{'BANNERS.levelOne' | translate}}</p>
+        <div class="tm-rectangle-image">
+            <ngx-file-drop *ngIf="filePathTwo === undefined" dropZoneLabel="{{'BANNERS.dropHere' | translate}}" (onFileDrop)="droppedTwo($event)">
+                <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                    <p class="tm-row-one tm-size-14 tm-color-tmrigablue tm-raleway-semi-bold-font tm-text-align-center">
+                        {{'BANNERS.dropHere' | translate}}</p>
+                    <p class="tm-row-two tm-text-align-center">{{'BANNERS.or' | translate}}</p>
+                    <button [ngClass]="{'tm-button-disabled' : showProgressTwo, 'tm-button-enabled': !showProgressTwo }" [disabled]="showProgressTwo" type="button" (click)="openFileSelector()">
+                        <p class="tm-size-14 tm-color-solid-basic-white-style">
+                            {{'BANNERS.selectImage' | translate}}
+                        </p>
+                    </button>
+                    <p class="tm-raleway-light-font tm-row-four tm-size-12 tm-color-tmrigablue tm-text-align-center">
+                        {{'BANNERS.formatImage' | translate}}</p>
+                </ng-template>
+            </ngx-file-drop>
+            <div class="tm-image-container" *ngIf="filePathTwo !== undefined">
+                <img src="{{filePathTwo}}" alt="">
+                <div *ngIf="showFinishedTwo" class="tm-image-name">
+                    <mat-icon svgIcon="ic-picture-on"></mat-icon>
+                    <div class="tm-image-text-cotainer">
+                        <p class="tm-size-12 tm-color-tmrigablue tm-raleway-medium-font">{{bannerNameTwo}}</p>
+                    </div>
+                    <mat-icon (click)="deleteImageTwo()" class="tm-ic-delete" svgIcon="ic-delete"></mat-icon>
+                </div>
+            </div>
+            <div *ngIf="showProgressTwo" class="tm-progress-bar-container">
+                <p class="tm-size-12 tm-color-tmrigablue">{{'BANNERS.uploading' | translate}} {{progressTwo}} %</p>
+                <mat-progress-bar mode="determinate" [value]="progressTwo">
+                </mat-progress-bar>
+                <div class="tm-progress-bar-filename">
+                    <mat-icon *ngIf="progressTwo > 10" svgIcon="ic-picture-start"></mat-icon>
+                    <mat-icon *ngIf="progressTwo < 10" svgIcon="ic-picture"></mat-icon>
+                    <div class="tm-progress-bar-text-cotainer">
+                        <p [ngClass]="{'tm-color-solid-basic-white-style' : progressTwo > 10, 'tm-color-tmrigablue' : progressTwo < 10}" class="tm-size-12 tm-raleway-medium-font">{{bannerNameTwo}}</p>
+                    </div>
+                    <mat-icon *ngIf="progressTwo === 100" svgIcon="ic-uploaded"></mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Second banner-->
+    <div class="tm-rectangle">
+        <p class="tm-size-16 tm-color-tmrigablue tm-raleway-medium-font">{{'BANNERS.levelTwo' | translate}}</p>
+        <div class="tm-rectangle-image">
+            <ngx-file-drop *ngIf="filePathThree === undefined" dropZoneLabel="{{'BANNERS.dropHere' | translate}}" (onFileDrop)="droppedThree($event)">
+                <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                    <p class="tm-row-one tm-size-14 tm-color-tmrigablue tm-raleway-semi-bold-font tm-text-align-center">
+                        {{'BANNERS.dropHere' | translate}}</p>
+                    <p class="tm-row-two tm-text-align-center">{{'BANNERS.or' | translate}}</p>
+                    <button [ngClass]="{'tm-button-disabled' : showProgressThree, 'tm-button-enabled': !showProgressThree }" [disabled]="showProgressThree" type="button" (click)="openFileSelector()">
+                        <p class="tm-size-14 tm-color-solid-basic-white-style">
+                            {{'BANNERS.selectImage' | translate}}
+                        </p>
+                    </button>
+                    <p class="tm-raleway-light-font tm-row-four tm-size-12 tm-color-tmrigablue tm-text-align-center">
+                        {{'BANNERS.formatImage' | translate}}</p>
+                </ng-template>
+            </ngx-file-drop>
+            <div class="tm-image-container" *ngIf="filePathThree !== undefined">
+                <img src="{{filePathThree}}" alt="">
+                <div *ngIf="showFinishedThree" class="tm-image-name">
+                    <mat-icon svgIcon="ic-picture-on"></mat-icon>
+                    <div class="tm-image-text-cotainer">
+                        <p class="tm-size-12 tm-color-tmrigablue tm-raleway-medium-font">{{bannerNameThree}}</p>
+                    </div>
+                    <mat-icon (click)="deleteImageThree()" class="tm-ic-delete" svgIcon="ic-delete"></mat-icon>
+                </div>
+            </div>
+            <div *ngIf="showProgressThree" class="tm-progress-bar-container">
+                <p class="tm-size-12 tm-color-tmrigablue">{{'BANNERS.uploading' | translate}} {{progressThree}} %</p>
+                <mat-progress-bar mode="determinate" [value]="progressThree">
+                </mat-progress-bar>
+                <div class="tm-progress-bar-filename">
+                    <mat-icon *ngIf="progressThree > 10" svgIcon="ic-picture-start"></mat-icon>
+                    <mat-icon *ngIf="progressThree < 10" svgIcon="ic-picture"></mat-icon>
+                    <div class="tm-progress-bar-text-cotainer">
+                        <p [ngClass]="{'tm-color-solid-basic-white-style' : progressThree > 10, 'tm-color-tmrigablue' : progressThree < 10}" class="tm-size-12 tm-raleway-medium-font">{{bannerNameThree}}</p>
+                    </div>
+                    <mat-icon *ngIf="progressThree === 100" svgIcon="ic-uploaded"></mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

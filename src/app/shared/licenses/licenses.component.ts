@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { PdfMakeWrapper, QR } from 'pdfmake-wrapper';
+import * as moment from 'moment';
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
+import { ESTATES, FORMATS, TYPES, TYPE_BLOOD, VALIDTY } from '../data';
 
 @Component({
   selector: 'app-licenses',
@@ -10,6 +11,12 @@ import * as pdfFonts from "pdfmake/build/vfs_fonts";
 })
 export class LicensesComponent implements OnInit {
   public formLicenses!: any;
+  public bloods = TYPE_BLOOD;
+  public states = ESTATES;
+  public typeLicenses = TYPES;
+  public validitys = VALIDTY;
+  public tmpValue = '';
+  public formats = FORMATS;
 
   constructor(
     private _fb: FormBuilder
@@ -35,33 +42,23 @@ export class LicensesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    moment.locale('es');
+    this.formLicenses.controls['alergies'].setValue('NINGUNA');
+    this.formLicenses.controls['expeditionDate'].setValue(moment().format('L'));
   }
 
   public save() {
-    console.log(this.formLicenses.value);
-    const pdf = new PdfMakeWrapper();
-    const qr = new QR('my code').fit(100).end;
-    PdfMakeWrapper.setFonts(pdfFonts);
-    pdf.add(
-      `Nombre; ${this.formLicenses.controls.name.value}`+'\n'+
-      `Apellidos; ${this.formLicenses.controls.lastName.value}`+'\n'+
-      `Fecha de nacimiento; ${this.formLicenses.controls.birthDate.value}`+'\n'+
-      `Curp; ${this.formLicenses.controls.curp.value}`+'\n'+
-      `Tipo de sangre; ${this.formLicenses.controls.bloodType.value}`+'\n'+
-      `Alergias; ${this.formLicenses.controls.alergies.value}`+'\n'+
-      `Nacionalidad; ${this.formLicenses.controls.nationality.value}`+'\n'+
-      `Calle; ${this.formLicenses.controls.street.value}`+'\n'+
-      `Colonia; ${this.formLicenses.controls.colony.value}`+'\n'+
-      `Ciudad; ${this.formLicenses.controls.city.value}`+'\n'+
-      `Estado; ${this.formLicenses.controls.estate.value}`+'\n'+
-      `Nombre de contacto; ${this.formLicenses.controls.contactName.value}`+'\n'+
-      `Telefono de contacto; ${this.formLicenses.controls.contactPhone.value}`+'\n'+
-      `Tipo de licencia; ${this.formLicenses.controls.type.value}`+'\n'+
-      `Validez; ${this.formLicenses.controls.validity.value}`+'\n'+
-      `Fecha de expedición; ${this.formLicenses.controls.expeditionDate.value}`      
-    );
-    pdf.add(qr);
-    pdf.create().download();
+  }
+
+  public setMinorType(){
+    if(this.formLicenses.controls['type'].value === 'Permiso de menor'){
+      this.validitys.push('6 Meses');
+      this.formLicenses.controls['validity'].setValue('6 Meses');
+    }
+  }
+
+  compareCategoryObjects(object1: any, object2: any) {
+    return object1 && object2 && object1.id == object2.id;
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BannerService } from 'src/app/services/banner.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +9,29 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  public slides = [
-    { src: "https://www.revistaneo.com/sites/default/files/2019-12/5-marcas-de-autos-que-crecieron-en-mexico.jpg" },
-    { src: "https://www.concanaco.com.mx/wp-content/uploads/2018/01/autos-mas-vendidos-Mexico.jpg" },
-    { src: "https://images.kavak.services/mx/assets/images/price-guide/jpg/price-guide-hero-sm.jpg" },
-    { src: "https://cdn2.atraccion360.com/media/aa/styles/xlarge/public/images/2017/07/zacua02galeria.jpg" }
-  ];
+  public slides = [];
 
   constructor(
-    private _route: Router
+    private _route: Router,
+    private _bannerService: BannerService
   ) { }
 
   ngOnInit(): void {
+    this.setBanners();
+  }
+  
+  setBanners() {
+    let dataObject!: any;
+    this._bannerService.getUidDocument().then((res: any) => {
+      res.forEach((doc: any) => {
+        dataObject = [
+          {title: doc.data().levelLowTitle, src: doc.data().levelLowbanner},
+          {title: doc.data().levelOneTitle, src: doc.data().levelOnebanner},
+          {title: doc.data().levelTwoTitle, src: doc.data().levelTwobanner}
+        ];
+      });
+      this.slides = dataObject;
+    });
   }
 
   public navigateTo(path: any){

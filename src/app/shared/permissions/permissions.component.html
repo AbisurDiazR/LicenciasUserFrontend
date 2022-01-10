@@ -5,34 +5,46 @@
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleBrand' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleBrand' | translate}}">
+                    <input type="text" formControlName="vehicleBrand" matInput placeholder="{{'PERMISSIONS.vehicleBrand' | translate}}">
                 </mat-form-field>
 
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleLine' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleLine' | translate}}">
+                    <input type="text" formControlName="vehicleLine" matInput placeholder="{{'PERMISSIONS.vehicleLine' | translate}}">
                 </mat-form-field>
             </div>
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleModel' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleModel' | translate}}">
+                    <input type="text" formControlName="vehicleModel" matInput placeholder="{{'PERMISSIONS.vehicleModel' | translate}}">
+                    <mat-error *ngIf="formPermission.controls['vehicleModel'].hasError('pattern')">
+                        Ingrese un modelo valido
+                    </mat-error>
+                    <mat-error *ngIf="formPermission.controls['vehicleModel'].hasError('maxLength')">
+                        Ingrese un modelo valido
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleColor' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleColor' | translate}}">
+                    <input type="text" formControlName="vehicleColor" matInput placeholder="{{'PERMISSIONS.vehicleColor' | translate}}">
                 </mat-form-field>
             </div>
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleSerialNumber' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleSerialNumber' | translate}}">
+                    <input [ngModel]="vin.value" (ngModelChange)="vin.value = $event.toUpperCase()" type="text" formControlName="vehicleSerialNumber" matInput placeholder="{{'PERMISSIONS.vehicleSerialNumber' | translate}}">
+                    <mat-error *ngIf="formPermission.controls['vehicleSerialNumber'].hasError('pattern')">
+                        Ingrese un número de serie valido
+                    </mat-error>
+                    <mat-error *ngIf="formPermission.controls['vehicleSerialNumber'].hasError('maxLength')">
+                        Ingrese un número de serie de longitud valida
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.vehicleMotorNumber' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.vehicleMotorNumber' | translate}}">
+                    <input [ngModel]="motorNumber.value" (ngModelChange)="motorNumber.value = $event.toUpperCase()" type="text" formControlName="vehicleMotorNumber" matInput placeholder="{{'PERMISSIONS.vehicleMotorNumber' | translate}}">
                 </mat-form-field>
             </div>
         </div>
@@ -42,11 +54,24 @@
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.solicitantName' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.solicitantName' | translate}}">
+                    <input type="text" formControlName="solicitantName" matInput placeholder="{{'PERMISSIONS.solicitantName' | translate}}">
                 </mat-form-field>
                 <mat-form-field class="tm-field" appearance="outline">
-                    <mat-label>{{'PERMISSIONS.solicitantAddress' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.solicitantAddress' | translate}}">
+                    <mat-label>Ingree la calle y número</mat-label>
+                    <input type="text" formControlName="solicitantStreet" matInput placeholder="Ingree la calle y número">
+                </mat-form-field>
+            </div>
+            <div class="lm-permissions-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Ingrese la colonia ciudad y estado</mat-label>
+                    <input type="text" formControlName="solicitantLocation" matInput placeholder="Ingrese la colonia ciudad y estado">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>{{'LICENSES.curp' | translate}}</mat-label>
+                    <input [ngModel]="curp.value" (ngModelChange)="curp.value = $event.toUpperCase()" formControlName="curp" matInput placeholder="{{'LICENSES.curp' | translate}}">
+                    <mat-error *ngIf="formPermission.controls['curp'].hasError('pattern')">
+                        Ingrese una curp valida
+                    </mat-error>
                 </mat-form-field>
             </div>
         </div>
@@ -55,17 +80,23 @@
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.invoice' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.invoice' | translate}}">
+                    <input (blur)="validateInvoice($event)" type="text" formControlName="invoice" matInput placeholder="{{'PERMISSIONS.invoice' | translate}}">
+                    <mat-error *ngIf="formPermission.controls['invoice'].hasError('pattern')">
+                        Ingrese un número de serie valido
+                    </mat-error>
+                    <mat-error *ngIf="formPermission.controls['invoice'].hasError('maxLength')">
+                        Ingrese un número de serie de longitud valida
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.import' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.import' | translate}}">
+                    <input type="number" formControlName="import" matInput placeholder="{{'PERMISSIONS.import' | translate}}">
                 </mat-form-field>
             </div>
             <div class="lm-permissions-field">
                 <mat-form-field class="tm-field" appearance="outline">
                     <mat-label>{{'PERMISSIONS.expeditionDate' | translate}}</mat-label>
-                    <input matInput placeholder="{{'PERMISSIONS.expeditionDate' | translate}}">
+                    <input formControlName="expeditionDate" matInput placeholder="{{'PERMISSIONS.expeditionDate' | translate}}" readonly>
                 </mat-form-field>
             </div>
         </div>

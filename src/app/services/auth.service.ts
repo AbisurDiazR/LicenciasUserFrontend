@@ -5,7 +5,8 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {;
+export class AuthService {
+  
 
   constructor(
     private _db: AngularFirestore,
@@ -41,5 +42,46 @@ export class AuthService {;
     } catch (err) {
     }
 
+  }
+
+  public saveUserData(userData: any, usr: any, uid: any){
+    let data = {
+      correo: userData.correo,
+      password: userData.password,
+      nombre: userData.correo,
+      activo: 'Activo',
+      funciones: userData.funciones,
+      rol: userData.rol,
+      foliosLicencia: userData.foliosLicencia,
+      folioPermisoInicial: userData.folioPermisoInicial,
+      folioPermisoFinal: userData.folioPermisoFinal,
+      createdAt: usr.createdAt,
+      creationTime: usr.creationTime,
+      lastLoginAt: usr.lastLoginAt,
+      lastSignInTime: usr.lastSignInTime
+    };
+    return this._db.collection(`usuarios`).doc(uid).set(data);
+  }
+
+  public updateUserData(userData: any, id_cuenta: any){
+    let data = {
+      correo: userData.correo,
+      password: userData.password,
+      nombre: userData.correo,
+      activo: 'Activo',
+      funciones: userData.funciones,
+      rol: userData.rol,
+      foliosLicencia: userData.foliosLicencia,
+      folioPermisoInicial: userData.folioPermisoInicial,
+      folioPermisoFinal: userData.folioPermisoFinal
+    }
+    return this._db.collection('usuarios').doc(id_cuenta).set(data);
+  }
+
+  public createAccount(email: any, password: any){
+    return this._auth.createUserWithEmailAndPassword(email, password);
+  }
+
+  public deleteUser(uid: any){
   }
 }

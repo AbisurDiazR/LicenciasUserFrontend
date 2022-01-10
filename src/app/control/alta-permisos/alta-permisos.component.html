@@ -1,0 +1,67 @@
+<div class="tm-alta-container">
+    <mat-card *ngIf="permiso !== undefined" class="example-card">
+        <mat-card-title>Detalle de permiso # {{permiso.invoice}}</mat-card-title>
+        <mat-card-content>
+            <ul>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Folio de permiso:</p> {{permiso.invoice}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Importe:</p> {{permiso.import}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Consulta en REPUVE:</p> SI
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Fecha de expedición:</p> {{permiso.expeditionDate}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Fecha de expiración:</p> {{permiso.expirationDate}}
+                </li>
+            </ul>
+            <ul>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Marca:</p> {{permiso.vehicleBrand}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Línea</p> {{permiso.vehicleLine}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Modelo:</p> {{permiso.vehicleModel}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Color:</p> {{permiso.vehicleColor}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Número de serie:</p> {{permiso.vehicleSerialNumber}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Número de motor</p> {{permiso.vehicleMotorNumber}}
+                </li>
+            </ul>
+        </mat-card-content>
+        <div class="tm-solicitant-data">
+            <p class="tm-solicitant-name-title">Nombre del solicitante</p>
+            <p>{{permiso.solicitantName}}</p>
+            <p class="tm-solicitant-address-title">Dirección del Solicitante</p>
+            <p>{{permiso.solicitantStreet}}</p><br>
+            <p>{{permiso.solicitantLocation}}</p>
+        </div>
+        <mat-card-actions>
+            <button class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-certified"></mat-icon>
+                Certificación
+            </button>
+            <button (click)="createRecive()" class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-doc"></mat-icon>
+                Recibo
+            </button>
+            <button (click)="generateFormat()" class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-permission"></mat-icon>
+                Formato
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    <!--<img id="leftId" style="visibility: hidden;" src="{{logoObject.left}}" alt="">
+    <img id="rightId" style="visibility: hidden;" src="{{logoObject.right}}" alt="">-->
+</div>

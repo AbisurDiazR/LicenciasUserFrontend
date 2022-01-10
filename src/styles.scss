@@ -85,3 +85,12 @@ mat-nav-list.list-horizontal {
     background: #FFFFFF;
     width: 100%;
 }
+
+.mat-card-actions,
+.mat-card-subtitle,
+.mat-card-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 24px !important;
+    margin-right: 40px !important;
+}

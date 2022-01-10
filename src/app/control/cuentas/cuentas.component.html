@@ -1,0 +1,74 @@
+<div class="tm-cuentas-form">
+    <form [formGroup]="formCuenta">
+        <h1>Datos de cuenta</h1>
+        <div class="lm-cuentas-fields-group">
+            <div class="lm-cuentas-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Correo electronico</mat-label>
+                    <input formControlName="correo" type="email" matInput placeholder="Correo electronico">
+                </mat-form-field>
+
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input formControlName="password" [type]="hide ? 'password' : 'text'" matInput placeholder="Contraseña">
+                    <mat-icon matSuffix svgIcon="ic-eye-{{ hide ? 'open' : 'closed' }}" (click)="hide = !hide"></mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="lm-cuentas-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Tipo de cuenta</mat-label>
+                    <mat-select formControlName="rol">
+                        <mat-option *ngFor="let cuenta of cuentas" [value]="cuenta">
+                            {{cuenta}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <h4>Roles:</h4>
+                    <p>
+                        <mat-checkbox [checked]="licencias" (change)="setLicencias()">Licencias</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox [checked]="permisos" (change)="setPermisos()">Permisos</mat-checkbox>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h1 *ngIf="licencias">Asignar folios de licencias</h1>
+        <div *ngIf="licencias" class="lm-cuentas-fields-group-two">
+            <div class="lm-cuentas-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Numero de folios</mat-label>
+                    <input formControlName="foliosLicencia" type="number" matInput placeholder="Numero de folios">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h1 *ngIf="permisos">Asignar folios de permisos</h1>
+        <div *ngIf="permisos" class="lm-cuentas-fields-group-two">
+            <div class="lm-cuentas-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Folio inicial</mat-label>
+                    <input formControlName="folioPermisoInicial" type="number" matInput placeholder="Folio inicial">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Folio final</mat-label>
+                    <input (blur)="setNumFolios()" formControlName="folioPermisoFinal" type="number" matInput placeholder="Folio final">
+                </mat-form-field>
+            </div>
+            <div class="lm-cuentas-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Numero de folios</mat-label>
+                    <input [disabled]="true" formControlName="numFolios" type="number" matInput placeholder="Numero de folios" readonly>
+                </mat-form-field>
+            </div>
+        </div>
+
+    </form>
+    <div class="tm-buttons-container">
+        <button class="tm-buttons-cancel">Cancelar</button>
+        <button *ngIf="id_cuenta === null" (click)="save()" class="tm-buttons-save">Guardar</button>
+        <button *ngIf="id_cuenta !== null" (click)="update()" class="tm-buttons-save">Actualizar</button>
+    </div>
+</div>

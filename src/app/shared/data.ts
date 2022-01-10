@@ -1,4 +1,4 @@
-export const TYPE_BLOOD = ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+'];
+export const TYPE_BLOOD = ['O-', 'O+', 'A-', 'A+', 'B-', 'B+', 'AB-', 'AB+','Se desconoce'];
 export const COUNTRIES = [
     { code: "101", country: "NAMIBIANA", key: "NAM" },
     { code: "103", country: "ANGOLESA", key: "AGO" },
@@ -185,19 +185,13 @@ export const COUNTRIES = [
 ];
 export const ESTATES = [{ clave: "1", estado: "Aguascalientes", abreviatura: "Ags." }, { clave: "10", estado: "Durango", abreviatura: "Dgo." }, { clave: "11", estado: "Guanajuato", abreviatura: "Gto." }, { clave: "12", estado: "Guerrero", abreviatura: "Gro." }, { clave: "13", estado: "Hidalgo", abreviatura: "Hgo." }, { clave: "14", estado: "Jalisco", abreviatura: "Jal." }, { clave: "15", estado: "M\u00c3\u00a9xico", abreviatura: "Mex." }, { clave: "16", estado: "Michoac", abreviatura: "Mich." }, { clave: "17", estado: "Morelos", abreviatura: "Mor." }, { clave: "18", estado: "Nayarit", abreviatura: "Nay." }, { clave: "19", estado: "Nuevo Leon", abreviatura: "NL" }, { clave: "2", estado: "Baja California", abreviatura: "BC" }, { clave: "20", estado: "Oaxaca", abreviatura: "Oax." }, { clave: "21", estado: "Puebla", abreviatura: "Pue." }, { clave: "22", estado: "Quer", abreviatura: "Qro." }, { clave: "23", estado: "Quintana Roo", abreviatura: "Q. Roo" }, { clave: "24", estado: "San Luis Potosi", abreviatura: "SLP" }, { clave: "25", estado: "Sinaloa", abreviatura: "Sin." }, { clave: "26", estado: "Sonora", abreviatura: "Son." }, { clave: "27", estado: "Tabasco", abreviatura: "Tab." }, { clave: "28", estado: "Tamaulipas", abreviatura: "Tamps." }, { clave: "29", estado: "Tlaxcala", abreviatura: "Tlax." }, { clave: "3", estado: "Baja California Sur", abreviatura: "BCS" }, { clave: "30", estado: "Veracruz de Ignacio de la Llave", abreviatura: "Ver." }, { clave: "31", estado: "Yucatan", abreviatura: "Yuc." }, { clave: "32", estado: "Zacatecas", abreviatura: "Zac." }, { clave: "4", estado: "Campeche", abreviatura: "Camp." }, { clave: "5", estado: "Coahuila de Zaragoza", abreviatura: "Coah." }, { clave: "6", estado: "Colima", abreviatura: "Col." }, { clave: "7", estado: "Chiapas", abreviatura: "Chis." }, { clave: "8", estado: "Chihuahua", abreviatura: "Chih." }, { clave: "9", estado: "Ciudad de M", abreviatura: "CDMX" }];
 export const TYPES = [
-    {clave: 0, tipo: 'Automovilista'},
-    {clave: 1, tipo: 'Chofer'},
-    {clave: 2, tipo: 'Motociclista'},
-    {clave: 3, tipo: 'Permiso de menor'}
+    {clave: 'A', tipo: 'Automovilista'},
+    {clave: 'C', tipo: 'Chofer'},
+    {clave: 'M', tipo: 'Motociclista'},
+    {clave: 'P', tipo: 'Permiso de menor'}
 ];
-export const VALIDTY = [
-    {clave: 0, time: '3 años'},
-    {clave: 1, time: '5 años'}
-];
-export const FORMATS = [
-    {clave: 0, name: 'Municipal'},
-    {clave: 1, name: 'Estatal'}
-]
+export const VALIDTY = ['3 años','5 años'];
+export const FORMATS = ['Municipal', 'Estatal'];
 export const DEFAULT_LANGUAGE = 'es';
 export const ADMINITEMS = [
     {route: 'usuarios', icon: 'ic-users', label: 'Usuarios'},
@@ -214,3 +208,43 @@ export const PRESIDENT_OPTIONS = [
 ];
 
 export const MASTER_COLUMNS = ['uid', 'correo', 'nombre','rol','dots'];
+export const CUENTAS = ['Común','Administrador'];
+export const CURP_REGEX = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/;
+export const VIN_REGEX = /[a-zA-Z0-9]{9}$/;
+export const YEAR_REGEX = /[0-9]{4}$/;
+export const INVOICE_REGEX = /[0-9]$/;
+export const FUNDAMENT = 'Con fundamento en lo dispuesto por los artículos 115 fracciones II y III, incisos h) e i) de la Constitución Política de los Estados Unidos Mexicanos; 20 fracción XXXI de la Ley Orgánica de la Administración Pública del Estado de Guerrero; 28 de la Ley de Transporte y Vialidad del Estado de Guerrero; 1° de la Ley de Ingresos del Estado de Guerrero, para el ejercicio fiscal 2014; 104 fracción VIII inciso b) párrafo segundo de la Ley de Hacienda del Estado de Guerrero número 428, y conforme al Anexo 2 del Convenio de Colaboración Administrativa en Materia Fiscal para la delegación de facultades de verificación del cumplimiento de obligaciones fiscales, con relación a los pagos del impuesto sobre tenencia o uso de vehículos y de los derechospor la expedición de placas, tarjeta de circulación y calcomanía de matrícula, de fecha 31 de octubre de 2012.';
+export const VALIDATE = 'Para comprobar validez de la licencia, verifíquela en la siguiente dirección de internet: www.transitomunicipalcuautepecgro.gob.mx';
+export const PORTAL = 'Véase en el portal de gobierno del estado, en Consejería Jurídica.';
+export const SNACK_BAR = {
+    logoUpdated: "Logos actualizados",
+    dataSavedSuccessfully: 'Tus datos se han guardado exitosamente',
+    emailSent: 'Se envió un correo para recuperar tu contraseña.',
+    youDoNotHaveAuthorization: 'Tu cuenta no es de tipo administrador.',
+    establishmentCreated: 'Nuevo establecimiento creado',
+    establishmentUpdated: 'El establecimiento ha sido actualizado',
+    disableStore: 'El establecimiento ha sido desactivado',
+    activeStore: 'El establecimiento ha sido activado',
+    notificationCreated: 'Nueva notificación creada',
+    notificationUpdated: 'La notificación ha sido actualizada',
+    deleteNotification: 'La notificación ha sido eliminada',
+    awardCreated: 'Nuevo premio creado',
+    awardUpdated: 'El premio ha sido actualizado',
+    deleteAward: 'El premio ha sido eliminado',
+    advertisingCreated: 'Nueva publicidad creada',
+    advertisingUpdated: 'La publicidad ha sido actualizada',
+    deleteAdvertising: 'La publicidad ha sido eliminada',
+    promotionCreated: 'Nueva promoción creada',
+    promotionUpdated: 'La promoción ha sido actualizada',
+    deletePromotion: 'La promoción ha sido eliminada',
+    notAllowedFormat: 'Formato de archivo invalido',
+    notAllowedSize: 'Tamaño de imagen excedido',
+    bannerUpdated: 'Banners actualizados',
+    couponDelete: 'El cupón ha sido eliminado',
+    couponCreated: 'Nuevo cupón creado',
+    couponUpdated: 'Cambios guardados correctamente',
+    couponRepeated: 'Ya existe un cupón con este nombre',
+    couponCodeRepeated: 'Ya existe un cupón con este código',
+    notStructure: 'La estructura del archivo de excel es invalida',
+    notNumberAllowed: 'No se admiten números menores a cero'
+};

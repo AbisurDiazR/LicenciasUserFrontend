@@ -13,4 +13,8 @@ export class UsersService {
   public getAllUsers(){
     return this._db.collection('usuarios').get();
   }
+
+  public updateStateUser(id_cuenta: any, state: any){
+    return this._db.collection('usuarios').doc(id_cuenta).update({activo: state});
+  }
 }

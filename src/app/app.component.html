@@ -23,12 +23,6 @@
                     </button>
                 </mat-menu>
                 <mat-nav-list class="tm-sidenavlist">
-                    <!--<mat-list-item class="tm-sidenavlist-item" *ngFor="let list of listas" [routerLinkActive]="['item-active']" routerLink="{{list.route}}">
-                        <div class="tm-sidenavlist-icons">
-                            <mat-icon class="tm-sidenavlist-icon" matListIcon svgIcon="{{list.icon}}"></mat-icon>
-                            <p class="tm-sidenavlist-title tm-font-naitem-title">{{list.label | translate}}</p>
-                        </div>
-                    </mat-list-item>-->
                     <mat-list-item class="tm-sidenavlist-item" *ngFor="let list of user.funciones" [routerLinkActive]="['item-active']" routerLink="{{list.route}}">
                         <div class="tm-sidenavlist-icons">
                             <mat-icon class="tm-sidenavlist-icon" matListIcon svgIcon="{{list.icon}}"></mat-icon>

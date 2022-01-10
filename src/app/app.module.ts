@@ -11,6 +11,8 @@ import { environment } from '../environments/environment';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { AngularFireModule } from '@angular/fire/compat';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAnalyticsModule
+    AngularFireAnalyticsModule,
+    AngularFireStorageModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,50 @@
+<div class="tm-folios-form">
+    <mat-form-field class="tm-field" appearance="outline">
+        <mat-icon svgIcon="ic-search" matPrefix></mat-icon>
+        <input #search matInput type="text" placeholder="Buscar cuenta">
+    </mat-form-field>
+    <form>
+        <div class="lm-folios-fields-group">
+            <div class="lm-folios-field">
+                <div>
+                    <h4>Roles:</h4>
+                    <p>
+                        <mat-checkbox>Licencias</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox>Permisos</mat-checkbox>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h1>Asignar folios de licencias</h1>
+        <div class="lm-folios-fields-group-two">
+            <div class="lm-folios-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Numero de folios</mat-label>
+                    <input type="number" matInput placeholder="Numero de folios">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <h1>Asignar folios de permisos</h1>
+        <div class="lm-folios-fields-group-two">
+            <div class="lm-folios-field">
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Folio inicial</mat-label>
+                    <input type="number" matInput placeholder="Folio inicial">
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Folio final</mat-label>
+                    <input type="number" matInput placeholder="Folio final">
+                </mat-form-field>
+            </div>
+        </div>
+
+    </form>
+    <div class="tm-buttons-container">
+        <button class="tm-buttons-cancel">Cancelar</button>
+        <button (click)="save()" class="tm-buttons-save">Guardar</button>
+    </div>
+</div>

@@ -115,5 +115,28 @@
         "invoice": "Ingresa el folio",
         "import": "Ingresa el importe",
         "expeditionDate": "Fecha de expedición"
+    },
+    "BANNERS": {
+        "lowLevel": "Primer Banner",
+        "levelOne": "Segundo Banner",
+        "levelTwo": "Tercer Banner",
+        "dropHere": "Arrastrar aquí",
+        "or": " ó ",
+        "selectImage": "Seleccione archivo",
+        "formatImage": "*.jpg *.png",
+        "uploading": "Cargando",
+        "lastUpdate": "Ultima actualización",
+        "save": "Guardar banners"
+    },
+    "LOGOS": {
+        "lowLevel": "Primer Logo",
+        "levelOne": "Segundo Logo",
+        "dropHere": "Arrastrar aquí",
+        "or": " ó ",
+        "selectImage": "Seleccione archivo",
+        "formatImage": "*.jpg *.png",
+        "uploading": "Cargando",
+        "lastUpdate": "Ultima actualización",
+        "save": "Guardar logos"
     }
 }

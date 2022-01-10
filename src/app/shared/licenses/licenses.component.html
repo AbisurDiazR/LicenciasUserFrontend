@@ -18,8 +18,12 @@
 
             <div class="lm-licenses-field">
                 <mat-form-field class="tm-field" appearance="outline">
+                    <!--<mat-label>{{'LICENSES.birthDate' | translate}}</mat-label>
+                    <input formControlName="birthDate" matInput placeholder="{{'LICENSES.birthDate' | translate}}">-->
                     <mat-label>{{'LICENSES.birthDate' | translate}}</mat-label>
-                    <input formControlName="birthDate" matInput placeholder="{{'LICENSES.birthDate' | translate}}">
+                    <input formControlName="birthDate" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
 
 
@@ -30,8 +34,14 @@
             </div>
             <div class="lm-licenses-field">
                 <mat-form-field class="tm-field" appearance="outline">
+                    <!--<mat-label>{{'LICENSES.bloodType' | translate}}</mat-label>
+                    <input formControlName="bloodType" matInput placeholder="{{'LICENSES.bloodType' | translate}}">-->
                     <mat-label>{{'LICENSES.bloodType' | translate}}</mat-label>
-                    <input formControlName="bloodType" matInput placeholder="{{'LICENSES.bloodType' | translate}}">
+                    <mat-select>
+                        <mat-option *ngFor="let blood of bloods" [value]="blood">
+                            {{blood}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
 
 
@@ -70,8 +80,14 @@
 
 
                 <mat-form-field class="tm-field" appearance="outline">
+                    <!--<mat-label>{{'LICENSES.state' | translate}}</mat-label>
+                    <input formControlName="estate" matInput placeholder="{{'LICENSES.state' | translate}}">-->
                     <mat-label>{{'LICENSES.state' | translate}}</mat-label>
-                    <input formControlName="estate" matInput placeholder="{{'LICENSES.state' | translate}}">
+                    <mat-select>
+                        <mat-option *ngFor="let state of states" [value]="state.estado">
+                            {{state.estado}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
             </div>
         </div>
@@ -92,20 +108,36 @@
         <div class="lm-licenses-fields-group-three">
             <div class="lm-licenses-field">
                 <mat-form-field class="tm-field" appearance="outline">
-                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
-                    <input formControlName="type" matInput placeholder="{{'LICENSES.name' | translate}}">
+                    <mat-label>Tipo de licencia</mat-label>
+                    <mat-select formControlName="type" (selectionChange)="setMinorType()">
+                        <mat-option *ngFor="let typeLicense of typeLicenses" [value]="typeLicense.tipo">
+                            {{typeLicense.tipo}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
 
 
                 <mat-form-field class="tm-field" appearance="outline">
-                    <mat-label>{{'LICENSES.lastName' | translate}}</mat-label>
-                    <input formControlName="validity" matInput placeholder="{{'LICENSES.lastName' | translate}}">
+                    <mat-label>Valida por</mat-label>
+                    <mat-select formControlName="validity" [compareWith]="compareCategoryObjects">
+                        <mat-option *ngFor="let validity of validitys" [value]="validity">
+                            {{validity}}
+                        </mat-option>
+                    </mat-select>
                 </mat-form-field>
             </div>
             <div class="lm-licenses-field">
                 <mat-form-field class="tm-field" appearance="outline">
-                    <mat-label>{{'LICENSES.name' | translate}}</mat-label>
-                    <input formControlName="expeditionDate" matInput placeholder="{{'LICENSES.name' | translate}}">
+                    <mat-label>Formato</mat-label>
+                    <mat-select formControlName="format" [compareWith]="compareCategoryObjects">
+                        <mat-option *ngFor="let format of formats" [value]="format">
+                            {{format}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="tm-field" appearance="outline">
+                    <mat-label>Fecha de expedición</mat-label>
+                    <input formControlName="expeditionDate" matInput placeholder="{{'LICENSES.name' | translate}}" readonly>
                 </mat-form-field>
             </div>
         </div>

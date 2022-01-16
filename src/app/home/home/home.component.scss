@@ -5,6 +5,17 @@
         width: 100%;
         height: 450px;
     }
+    .tm-history-container {
+        margin: 50px 100px;
+        p {
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: auto;
+            line-height: 2;
+        }
+    }
     .tm-home-body-sections {
         display: flex;
         justify-content: space-between;

@@ -73,9 +73,15 @@ export class CuentasComponent implements OnInit {
 
   public save() {
     let funcionesTmp = []
-    if (this.licencias) funcionesTmp.push({ icon: 'ic-users', iconof: '', label: 'Crear licencias', route: 'control/licencias' });
-    if (this.permisos) funcionesTmp.push({ icon: 'ic-users', iconof: '', label: 'Crear permisos', route: 'control/permisos' });
+    if (this.licencias) funcionesTmp.push({ icon: 'ic-users', iconoff: '', label: 'Crear licencias', route: 'control/licencias' });
+    if (this.permisos) funcionesTmp.push({ icon: 'ic-users', iconoff: '', label: 'Crear permisos', route: 'control/permisos' });
+    if (this.formCuenta.controls['rol'].value === 'Administrador') funcionesTmp.push({ icon: 'ic-users', iconoff: '', label: 'Crear cuentas', route: 'control/cuentas' }, { icon: 'ic-users', iconoff: '', label: 'Mis cuentas', route: 'control/mis-cuentas' });
+    funcionesTmp.push(
+      {icon: 'ic-users', iconoff: '', label: 'Mis Permisos', route: 'control/mis-permisos'},
+      {icon: 'ic-users', iconoff: '', label: 'Mis Asignaciones', route: 'control/mis-asignaciones'}
+    );
     this.formCuenta.controls['funciones'].setValue(funcionesTmp);
+    console.log(this.formCuenta.value);
     if(this.formCuenta.valid){this._userService.createAccount(this.formCuenta.controls['correo'].value, this.formCuenta.controls['password'].value).then((res: any) => {
       let usr = res.user;
       this._userService.saveUserData(this.formCuenta.value, usr.metadata, usr.uid);

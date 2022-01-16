@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PermissionService } from 'src/app/services/permission.service';
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
-import { Cell, Columns, Img, PdfMakeWrapper, QR, Table, Txt } from 'pdfmake-wrapper';
-import { NgxNumToWordsService } from 'ngx-num-to-words';
+import { Img, PdfMakeWrapper, QR, Table, Txt } from 'pdfmake-wrapper';
 import { CurrencyPipe } from '@angular/common';
 import { FUNDAMENT, PORTAL, VALIDATE } from 'src/app/shared/data';
 import { LogosService } from 'src/app/services/logos.service';
@@ -19,6 +18,7 @@ export class AltaPermisosComponent implements OnInit {
   public textQr!: string;
   public defaultSize: number = 9;
   public logoObject!: any;
+  public titleSize: number = 19;
 
   constructor(
     private _permissionService: PermissionService,
@@ -109,16 +109,22 @@ export class AltaPermisosComponent implements OnInit {
     const qr = new QR(this.textQr).alignment('left').fit(150).end;
     pdf.add(qr);
     pdf.add(await new Img(this.logoObject.left).alignment('left').absolutePosition(50,50).width(160).height(50).build());
-    pdf.add(new Txt('H. AYUNTAMIENTO CUAUTEPEC, GRO.').alignment('center').bold().absolutePosition(100,70).end);
-    pdf.add(await new Img(this.logoObject.right).alignment('right').absolutePosition(0,50).width(80).height(80).build());
-    pdf.add(new Txt('Recibo de pago por la expedición de permiso para circular sin placas y sin tarjeta de circulación').fontSize(12).alignment('left').absolutePosition(40,130).end);
+    pdf.add(new Txt('H. AYUNTAMIENTO').fontSize(this.titleSize).alignment('center').bold().absolutePosition(100,70).end);
+    pdf.add(new Txt('CUAUTEPEC, GRO.').fontSize(this.titleSize).alignment('center').bold().absolutePosition(100,90).end);
+    pdf.add(await new Img(this.logoObject.right).alignment('right').absolutePosition(0,25).width(80).height(80).build());
+    pdf.add(new Txt('Recibo de pago por la expedición de permiso para circular sin placas y sin tarjeta de circulación.').fontSize(12).alignment('left').absolutePosition(40,130).end);
     pdf.add(new Table([
       [new Table([[`Num de Permiso: ${this.permiso.invoice}`,
       `Fecha de expedición: ${this.permiso.expeditionDate}`,
       `Fecha de vencimiento: ${this.permiso.expirationDate}`]
       ]).layout('noBorders').widths('*').end],
       [new Table([[`Solicitate: ${this.permiso.solicitantName}`]]).layout('noBorders').widths('*').end],
-      [new Table([[`Domicilio: ${this.permiso.solicitantStreet} ${this.permiso.solicitantLocation}`]]).layout('noBorders').widths('*').end],
+      [new Table(
+        [
+          [`Domicilio: ${this.permiso.solicitantStreet}`],
+          [`${this.permiso.solicitantLocation}`]
+        ]
+      ).layout('noBorders').widths('*').end],
       [new Table([[`CURP o RFC: ${this.permiso.curp}`]]).layout('noBorders').widths('*').end],
       [new Table([
         ['Codigo QR:'],

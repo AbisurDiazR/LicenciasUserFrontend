@@ -2,44 +2,7 @@
     <div class="tm-home-carousel-container">
         <app-carousel [slides]="slides"></app-carousel>
     </div>
-    <section class="tm-home-body-sections">
-        <div class="tm-home-option">
-            <div class="tm-home-option-ic">
-                <mat-icon svgIcon="ic-verify"></mat-icon>
-            </div>
-            <p class="tm-header-title">{{'HOME.verifyTitle' | translate}}</p>
-            <div class="tm-home-body">
-                <p class="tm-general-text">{{'HOME.verifyBody' | translate}}</p>
-            </div>
-        </div>
-        <div class="tm-home-option">
-            <div class="tm-home-option-ic">
-                <mat-icon svgIcon="ic-procedure"></mat-icon>
-            </div>
-            <p class="tm-header-title">{{'HOME.procedureTitle' | translate}}</p>
-            <div class="tm-home-body">
-                <p class="tm-general-text">{{'HOME.procedureBody' | translate}}</p>
-            </div>
-        </div>
-        <div class="tm-home-option">
-            <div class="tm-home-option-ic">
-                <mat-icon svgIcon="ic-contact"></mat-icon>
-            </div>
-            <p class="tm-header-title">{{'HOME.contactTitle' | translate}}</p>
-            <div class="tm-home-body">
-                <p class="tm-general-text">{{'HOME.contactBody' | translate}}</p>
-            </div>
-        </div>
-    </section>
-    <section class="tm-home-sections">
-        <div class="tm-home-buttons">
-            <p class="tm-header-title">{{'HOME.validityQuestion' | translate}}</p>
-            <div class="tm-container-buttons">
-                <button (click)="navigateTo('verificar/permisos')" class="tm-home-button">{{'HOME.verifyButton' | translate}}</button>
-                <button (click)="navigateTo('verificar/licencias')" class="tm-home-button">{{'HOME.procedureButton' | translate}}</button>
-            </div>
-            <p class="tm-general-text">{{'HOME.verifyDescribe' | translate}}
-            </p>
-        </div>
-    </section>
+    <div class="tm-history-container">
+        <p>{{historicContent}}</p>
+    </div>
 </div>

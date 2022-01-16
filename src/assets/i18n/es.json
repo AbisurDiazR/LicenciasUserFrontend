@@ -13,9 +13,9 @@
     },
     "NAVBAR": {
         "home": "Inicio",
-        "verify": "Verificar",
+        "verify": "Validar autenticidad de documento",
         "repuve": "Repuve",
-        "procedure": "Trámite",
+        "procedure": "Tramites",
         "comunicate": "Comunicado",
         "contact": "Contacto",
         "dashboard": "Panel Administrativo",
@@ -44,8 +44,9 @@
         "secondPeriod": "Administración 2018-2021"
     },
     "PROCEDURE": {
-        "rigthTitle": "REQUISITOS PARA TRAMITAR TU PERMISO VEHICULAR",
-        "leftTitle": "REQUISITOS PARA TRAMITAR TU LICENCIA DE CONDUCIR"
+        "rigthTitle": "PERMISO PARA CIRCULAR SIN PLACAS Y SIN TARJETA DE CIRCULACIÓN VALIDO POR 30 DÍAS",
+        "leftTitle": "REQUISITOS PARA TRAMITAR TU LICENCIA DE CONDUCIR",
+        "leftSubtitle": "(COPIAS Y ORIGINAL)"
     },
     "CONTROL": {
         "acceessKeys": "Credenciales de Acceso",
@@ -138,5 +139,18 @@
         "uploading": "Cargando",
         "lastUpdate": "Ultima actualización",
         "save": "Guardar logos"
+    },
+    "FORMATOS": {
+        "lowLevel": "Licencia municipal frente",
+        "levelOne": "Licencia municipal atras",
+        "licenciaEstatalFrente": "Licencia estatal frente",
+        "licenciaEstatalAtras": "Licencia estatal atras",
+        "dropHere": "Arrastrar aquí",
+        "or": " ó ",
+        "selectImage": "Seleccione archivo",
+        "formatImage": "*.jpg *.png",
+        "uploading": "Cargando",
+        "lastUpdate": "Ultima actualización",
+        "save": "Guardar formatos"
     }
 }

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  
+  public currentUser$: Subject<any> = new Subject();
 
   constructor(
     private _db: AngularFirestore,
@@ -38,6 +39,7 @@ export class AuthService {
   public async logout() {
     try {
       await this._auth.signOut();
+      this.currentUser$.next(null);
       localStorage.removeItem('uid');
     } catch (err) {
     }

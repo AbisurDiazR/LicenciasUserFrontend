@@ -8,18 +8,68 @@
         <!--- Note that these columns can be defined in any order.
               The actual rendered columns are set as a property on the row definition" -->
 
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> Cuentas</th>
+        <!-- invoice Column -->
+        <ng-container matColumnDef="invoice">
+            <th mat-header-cell *matHeaderCellDef>Folio</th>
             <td mat-cell *matCellDef="let element">
                 <p (click)="goToCerficate(element.id)" class="tm-mispermisos-link-text">{{element.invoice}}</p>
             </td>
         </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef>Estatus</th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <!-- brand Column -->
+        <ng-container matColumnDef="brand">
+            <th mat-header-cell *matHeaderCellDef>Marca</th>
+            <td mat-cell *matCellDef="let element"> {{element.vehicleBrand}} </td>
+        </ng-container>
+
+        <!-- line Column -->
+        <ng-container matColumnDef="line">
+            <th mat-header-cell *matHeaderCellDef>Linea</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.vehicleLine}}
+            </td>
+        </ng-container>
+
+        <!-- model Column -->
+        <ng-container matColumnDef="model">
+            <th mat-header-cell *matHeaderCellDef>Modelo</th>
+            <td mat-cell *matCellDef="let element"> {{element.vehicleModel}} </td>
+        </ng-container>
+
+        <!-- color Column -->
+        <ng-container matColumnDef="color">
+            <th mat-header-cell *matHeaderCellDef>Color</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.vehicleColor}}
+            </td>
+        </ng-container>
+
+        <!-- numMotor Column -->
+        <ng-container matColumnDef="numMotor">
+            <th mat-header-cell *matHeaderCellDef>Numero de motor</th>
+            <td mat-cell *matCellDef="let element"> {{element.vehicleMotorNumber}} </td>
+        </ng-container>
+
+        <!-- numSerial Column -->
+        <ng-container matColumnDef="numSerial">
+            <th mat-header-cell *matHeaderCellDef>Numero de serie</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.vehicleSerialNumber}}
+            </td>
+        </ng-container>
+
+        <!-- expeditionDate Column -->
+        <ng-container matColumnDef="expeditionDate">
+            <th mat-header-cell *matHeaderCellDef>Fecha de expedicion</th>
+            <td mat-cell *matCellDef="let element"> {{element.expeditionDate}} </td>
+        </ng-container>
+
+        <!-- expirationDate Column -->
+        <ng-container matColumnDef="expirationDate">
+            <th mat-header-cell *matHeaderCellDef>Fecha de expiracion</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.expirationDate}}
+            </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

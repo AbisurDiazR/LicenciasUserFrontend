@@ -18,6 +18,10 @@ export class PermissionService {
     return this._fb.collection('permisos').doc(id_permiso).get();
   }
 
+  public getPermisos(){
+    return this._fb.collection('permisos').get();
+  }
+
   public getPermisosByUser(id_user: any){
     return this._fb.collection('permisos', ref => ref.where('creatorUid', '==', `${id_user}`)).get();
   }

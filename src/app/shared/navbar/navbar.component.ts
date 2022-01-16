@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LogosService } from 'src/app/services/logos.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  public transitoMunicipal: any = '';
 
   constructor(
-    private _route: Router
+    private _route: Router,
+    private _logos: LogosService
   ) { }
 
   ngOnInit(): void {
+    this.getLogoTransito();
+  }
+  getLogoTransito() {
+    this._logos.getUidDocument().then((res: any) => {
+      res.forEach((doc: any) => {
+        let logoObject = {
+          left: doc.data().levelLowlogo,
+          right: doc.data().levelOnelogo
+        }
+        this.transitoMunicipal = logoObject.right;     
+      });
+    });
   }
 
   public navigateTo(path: any){

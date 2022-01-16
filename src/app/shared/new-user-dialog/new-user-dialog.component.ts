@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-new-user-dialog',
@@ -17,15 +18,11 @@ export class NewUserDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private _dialogRef: MatDialogRef<NewUserDialogComponent>,
-    private _fb: FormBuilder
+    private _fb: FormBuilder,
+    private _cuentasService: UsersService
   ) {
     this.formUser = this._fb.group({
-      correo: new FormControl('', [Validators.required]),
-      nombre: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      rol: new FormControl('', [Validators.required]),
-      creator: new FormControl(''),
-      creatorUid: new FormControl('')
+      mensaje: new FormControl('', [Validators.required]),
     });
   }
 
@@ -37,9 +34,9 @@ export class NewUserDialogComponent implements OnInit {
   }
 
   public create(){
-    this.formUser.controls['creator'].setValue(this.data.user.nombre);
-    this.formUser.controls['creatorUid'].setValue(localStorage.getItem('uid'));
-    console.log(this.formUser.value);
+    this._cuentasService.addMemorandum(this.data.id_cuenta, this.formUser.controls['mensaje'].value).then(() => {
+      this._dialogRef.close(false);
+    })
   }
 
 }

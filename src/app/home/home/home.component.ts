@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BannerService } from 'src/app/services/banner.service';
+import { HISTORY_CUATEPEC } from 'src/app/shared/data';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { BannerService } from 'src/app/services/banner.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  public historicContent = HISTORY_CUATEPEC;
   public slides = [];
 
   constructor(

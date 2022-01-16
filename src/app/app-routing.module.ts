@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('src/app/contact/contact.module').then(m => m.ContactModule)
   },
   {
-    path: 'comunicado',
-    loadChildren: () => import('src/app/comunicate/comunicate.module').then(m => m.ComunicateModule)
-  },
-  {
     path: 'control',
     loadChildren: () => import('src/app/control/control.module').then(m => m.ControlModule)
   },

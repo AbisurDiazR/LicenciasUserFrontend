@@ -1,5 +1,5 @@
 <nav class="tm-navbar-container">
-    <a class="" href="/"><img src="assets/img/navbar-logo.png" alt=""></a>
+    <a class="tm-navbar-logo-transito" href="/"><img src="{{transitoMunicipal}}" alt=""></a>
     <div>
         <mat-toolbar class="tm-navbar-toolbar">
             <mat-nav-list class="list-horizontal">
@@ -32,11 +32,6 @@
                     </button>
                 </mat-list-item>
                 <mat-list-item>
-                    <button (click)="navigateTo('comunicado')" class="tm-navbar-menu-button" mat-menu-item>
-                        {{'NAVBAR.comunicate' | translate}}
-                    </button>
-                </mat-list-item>
-                <mat-list-item>
                     <button (click)="navigateTo('contacto')" class="tm-navbar-menu-button" mat-menu-item>
                         {{'NAVBAR.contact' | translate}}
                     </button>
@@ -49,4 +44,5 @@
             </mat-nav-list>
         </mat-toolbar>
     </div>
+    <a class="" href="/"><img src="assets/img/navbar-logo.png" alt=""></a>
 </nav>

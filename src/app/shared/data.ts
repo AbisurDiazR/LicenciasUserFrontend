@@ -208,16 +208,17 @@ export const PRESIDENT_OPTIONS = [
 ];
 
 export const MASTER_COLUMNS = ['uid', 'correo', 'nombre','rol','dots'];
-export const CUENTAS = ['Común','Administrador'];
+export const CUENTAS = ['Basica','Administrador'];
 export const CURP_REGEX = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/;
 export const VIN_REGEX = /[a-zA-Z0-9]{9}$/;
-export const YEAR_REGEX = /[0-9]{4}$/;
+export const YEAR_REGEX = /[0-9]$/;
 export const INVOICE_REGEX = /[0-9]$/;
-export const FUNDAMENT = 'Con fundamento en lo dispuesto por los artículos 115 fracciones II y III, incisos h) e i) de la Constitución Política de los Estados Unidos Mexicanos; 20 fracción XXXI de la Ley Orgánica de la Administración Pública del Estado de Guerrero; 28 de la Ley de Transporte y Vialidad del Estado de Guerrero; 1° de la Ley de Ingresos del Estado de Guerrero, para el ejercicio fiscal 2014; 104 fracción VIII inciso b) párrafo segundo de la Ley de Hacienda del Estado de Guerrero número 428, y conforme al Anexo 2 del Convenio de Colaboración Administrativa en Materia Fiscal para la delegación de facultades de verificación del cumplimiento de obligaciones fiscales, con relación a los pagos del impuesto sobre tenencia o uso de vehículos y de los derechospor la expedición de placas, tarjeta de circulación y calcomanía de matrícula, de fecha 31 de octubre de 2012.';
+export const FUNDAMENT = 'Con fundamento en lo dispuesto por los artículos 115 fracciones II y III, incisos h) e i) de la Constitución Política de los Estados Unidos Mexicanos; 20 fracción XXXI de la Ley Orgánica de la Administración Pública del Estado de Guerrero; 28 de la Ley de Transporte y Vialidad del Estado de Guerrero; 1° de la Ley de Ingresos del Estado de Guerrero, para el ejercicio fiscal 2014; 104 fracción VIII inciso b) párrafo segundo de la Ley de Hacienda del Estado de Guerrero número 428, y conforme al Anexo 2 del Convenio de Colaboración Administrativa en Materia Fiscal para la delegación de facultades de verificación del cumplimiento de obligaciones fiscales, con relación a los pagos del impuesto sobre tenencia o uso de vehículos y de los derechos por la expedición de placas, tarjeta de circulación y calcomanía de matrícula, de fecha 31 de octubre de 2012.';
 export const VALIDATE = 'Para comprobar validez de la licencia, verifíquela en la siguiente dirección de internet: www.transitomunicipalcuautepecgro.gob.mx';
 export const PORTAL = 'Véase en el portal de gobierno del estado, en Consejería Jurídica.';
 export const SNACK_BAR = {
     logoUpdated: "Logos actualizados",
+    formatoUpdated: "Formatos actualizados",
     dataSavedSuccessfully: 'Tus datos se han guardado exitosamente',
     emailSent: 'Se envió un correo para recuperar tu contraseña.',
     youDoNotHaveAuthorization: 'Tu cuenta no es de tipo administrador.',
@@ -248,3 +249,4 @@ export const SNACK_BAR = {
     notStructure: 'La estructura del archivo de excel es invalida',
     notNumberAllowed: 'No se admiten números menores a cero'
 };
+export const HISTORY_CUATEPEC = 'Santiago Cuautepec, pueblo de la Costa Chica, “donde la tierra ciñe su cuerpo con la ajustada vestidura de la siembra”. Irrigan este pueblo los arroyos de Ahualoyan y Chomulco. En cuatro barrios se divide: Teocalco, al pie de Zoyamichán; Chomulco, al pie de Cerro Grande; Paxpalan, al occidente por el manantial de su nombre, y Ahualoyan al septentrión. Soyamiche y Tepecisto donde se asegura que fueron sembradas las primeras palmas de coco. Las campanas que al decir del poeta, llaman al deber tlacololero...';

@@ -9,9 +9,9 @@ import { PermissionService } from 'src/app/services/permission.service';
   styleUrls: ['./mis-permisos.component.scss']
 })
 export class MisPermisosComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name',];
   public ELEMENT_DATA: any[] = [];
-  dataSource = new MatTableDataSource();
+  public displayedColumns = ['invoice','brand','line','model','color','numMotor','numSerial','expeditionDate','expirationDate'];
+  public dataSource = new MatTableDataSource();
 
   constructor(
     private _permissionService: PermissionService,

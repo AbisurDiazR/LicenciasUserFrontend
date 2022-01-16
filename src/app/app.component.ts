@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.getUserById(localStorage.getItem('uid')).subscribe((usr: any) => {
       this.user = { uid: usr.id, ...usr.data() };
-      this._navigation.navigate(['/control/usuarios']);
+      //this._navigation.navigate(['/control/usuarios']);
       this.userData = true;
     }, err => {
       console.log(err);

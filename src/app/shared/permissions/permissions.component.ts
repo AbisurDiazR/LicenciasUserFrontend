@@ -31,7 +31,7 @@ export class PermissionsComponent implements OnInit {
     this.formPermission = this._fb.group({
       vehicleBrand: new FormControl('', [Validators.required]),
       vehicleLine: new FormControl('', [Validators.required]),
-      vehicleModel: new FormControl('', [Validators.required, Validators.pattern(YEAR_REGEX), Validators.maxLength(4)]),
+      vehicleModel: new FormControl('', [Validators.required]),
       vehicleColor: new FormControl('', [Validators.required]),
       vehicleSerialNumber: new FormControl('', [Validators.required, Validators.pattern(VIN_REGEX)]),
       vehicleMotorNumber: new FormControl('', [Validators.required]),
@@ -39,7 +39,7 @@ export class PermissionsComponent implements OnInit {
       solicitantStreet: new FormControl('', [Validators.required]),
       solicitantLocation: new FormControl('', [Validators.required]),
       curp: new FormControl('', [Validators.required]),
-      invoice: new FormControl('', [Validators.required, Validators.pattern(INVOICE_REGEX)]),
+      invoice: new FormControl('', [Validators.required]),
       import: new FormControl('', [Validators.required]),
       expeditionDate: new FormControl(''),
       expirationDate: new FormControl(''),

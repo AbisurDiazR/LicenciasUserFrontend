@@ -37,6 +37,9 @@ import { PermissionsComponent } from './permissions/permissions.component';
 import { LicensesComponent } from './licenses/licenses.component';
 
 import { NgxNumToWordsModule } from 'ngx-num-to-words';
+import { MemorandumDialogComponent } from './memorandum-dialog/memorandum-dialog.component';
+
+import { NgxPhotoEditorModule } from 'ngx-photo-editor';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json')
@@ -49,7 +52,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     NavbarComponent,
     NewUserDialogComponent,
     PermissionsComponent,
-    LicensesComponent
+    LicensesComponent,
+    MemorandumDialogComponent
   ],
   imports: [
     CommonModule,
@@ -78,7 +82,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatCardModule,
     NgxNumToWordsModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgxPhotoEditorModule
   ],
   exports: [
     HttpClientModule,
@@ -112,7 +117,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatCardModule,
     NgxNumToWordsModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgxPhotoEditorModule
   ]
 })
 export class SharedModule { }

@@ -94,3 +94,10 @@ mat-nav-list.list-horizontal {
     margin-top: 24px !important;
     margin-right: 40px !important;
 }
+
+.mat-stepper-vertical,
+.mat-stepper-horizontal {
+    width: 1040px !important;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

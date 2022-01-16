@@ -1,0 +1,60 @@
+.tm-alta-container {
+    padding: 50px;
+    mat-card {
+        width: 850px;
+        box-shadow: none;
+        border: 1px solid;
+    }
+}
+
+.tm-li-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    .tm-p-item {
+        font-weight: 700;
+        text-align: left;
+        font-size: 15px;
+    }
+}
+
+.tm-function-button {
+    border-radius: 8px;
+    background: khaki;
+    width: 450px;
+    height: 50px;
+    color: black;
+    font-weight: bold;
+}
+
+.tm-solicitant-data {
+    display: grid;
+    margin: 0 40px;
+    .tm-solicitant-name-title {
+        grid-row: 1;
+        grid-column: 1;
+        font-weight: 700;
+        font-size: 15px;
+    }
+    .tm-solicitant-address-title {
+        grid-row: 1;
+        grid-column: 2;
+        font-weight: 700;
+        font-size: 15px;
+    }
+}
+
+.tm-licencias-images {
+    margin: 0 72px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .img-foto {
+        width: 170px;
+        height: 200px;
+    }
+    .img-firma {
+        width: 230px;
+        height: 140px;
+        margin: 30px 0;
+    }
+}

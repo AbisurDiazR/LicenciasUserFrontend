@@ -14,6 +14,11 @@ import { MisPermisosComponent } from './mis-permisos/mis-permisos.component';
 import { WebmasterComponent } from './webmaster/webmaster.component';
 import { LicensesPicturesComponent } from './licenses-pictures/licenses-pictures.component';
 import { PermissionPicturesComponent } from './permission-pictures/permission-pictures.component';
+import { MisLicenciasComponent } from './mis-licencias/mis-licencias.component';
+import { MisAsignacionesComponent } from './mis-asignaciones/mis-asignaciones.component';
+import { VerPermisosComponent } from './ver-permisos/ver-permisos.component';
+import { VerLicenciasComponent } from './ver-licencias/ver-licencias.component';
+import { AltaLicenciasComponent } from './alta-licencias/alta-licencias.component';
 
 
 @NgModule({
@@ -28,7 +33,12 @@ import { PermissionPicturesComponent } from './permission-pictures/permission-pi
     MisPermisosComponent,
     WebmasterComponent,
     LicensesPicturesComponent,
-    PermissionPicturesComponent
+    PermissionPicturesComponent,
+    MisLicenciasComponent,
+    MisAsignacionesComponent,
+    VerPermisosComponent,
+    VerLicenciasComponent,
+    AltaLicenciasComponent
   ],
   imports: [
     CommonModule,

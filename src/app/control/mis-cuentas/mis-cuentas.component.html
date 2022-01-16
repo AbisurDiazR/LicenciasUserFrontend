@@ -30,6 +30,7 @@
                     <button mat-menu-item>Eliminar</button>
                     <button *ngIf="element.name !== 'Activo'" (click)="activarCuenta(element.id)" mat-menu-item>Activar</button>
                     <button *ngIf="element.name === 'Activo'" (click)="bloquearCuenta(element.id)" mat-menu-item>Bloquear</button>
+                    <button *ngIf="user.rol === 'director'" (click)="addMemorandum(element.id)" mat-menu-item>Memorandum</button>
                 </mat-menu>
             </td>
 

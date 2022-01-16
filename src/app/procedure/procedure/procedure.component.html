@@ -2,6 +2,7 @@
     <div class="tm-procedure-flex">
         <div *ngIf="load_permission" class="tm-procedjure-grid">
             <p class="tm-title">{{'PROCEDURE.rigthTitle' | translate}}</p>
+            <p class="tm-subtitle">{{'PROCEDURE.leftSubtitle' | translate}}</p>
             <ul class="tm-items">
                 <li *ngFor="let requisito of permissionsRequires.requisitos">
                     {{requisito}}
@@ -10,11 +11,16 @@
         </div>
         <div *ngIf="load_license" class="tm-procedjure-grid">
             <p class="tm-title">{{'PROCEDURE.leftTitle' | translate}}</p>
+            <p class="tm-subtitle">{{'PROCEDURE.leftSubtitle' | translate}}</p>
             <ul class="tm-items">
                 <li *ngFor="let requisito of licensesRequires.requisitos">
                     {{requisito}}
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="tm-request-on">
+        <p class="tm-title">Solicita y envianos tus datos a:</p>
+        <p>transito.municipal.cuautepec@gmail.com</p>
     </div>
 </div>

@@ -1,0 +1,69 @@
+<div class="tm-alta-container">
+    <mat-card *ngIf="licencia !== undefined" class="example-card">
+        <mat-card-title>Detalle de licencia # {{licencia.folio}}</mat-card-title>
+        <mat-card-content>
+            <ul>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Folio de licencia:</p> {{licencia.folio}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Tipo:</p> {{licencia.type}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Tipo de sangre:</p> {{licencia.bloodType}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Fecha de expedición:</p> {{licencia.expeditionDate}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Fecha de expiración:</p> {{licencia.expirationDate}}
+                </li>
+            </ul>
+            <ul>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Contacto en caso de accidente:</p> {{licencia.contactName}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Número de contacto:</p> {{licencia.contactPhone}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Nacionalidad:</p> {{licencia.nationality}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">CURP o RFC:</p> {{licencia.curp}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Alegias:</p> {{licencia.alergies}}
+                </li>
+                <li class="tm-li-item">
+                    <p class="tm-p-item">Formato:</p> {{licencia.format}}
+                </li>
+            </ul>
+        </mat-card-content>
+        <div class="tm-solicitant-data">
+            <p class="tm-solicitant-name-title">Nombre del solicitante</p>
+            <p>{{licencia.name}} {{licencia.lastName}}</p>
+            <p class="tm-solicitant-address-title">Dirección del Solicitante</p>
+            <p>{{licencia.street}}</p><br>
+            <p>{{licencia.colony}}</p>
+        </div>
+        <div class="tm-licencias-images">
+            <img class="img-foto" src="{{licencia.photo}}" alt="">
+            <img class="img-firma" src="{{licencia.firm}}" alt="">
+        </div>
+        <mat-card-actions>
+            <button class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-certified"></mat-icon>
+                Certificación
+            </button>
+            <button (click)="createRecive()" class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-doc"></mat-icon>
+                Recibo
+            </button>
+            <button (click)="generateFormat()" class="tm-function-button" mat-button>
+                <mat-icon svgIcon="ic-permission"></mat-icon>
+                Formato
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -10,7 +10,21 @@
             .tm-title {
                 font-weight: bold;
                 text-transform: uppercase;
+                text-align: center;
             }
+            .tm-subtitle {
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+            }
+        }
+    }
+    .tm-request-on {
+        margin: 120px 0;
+        display: grid;
+        justify-content: center;
+        p {
+            text-align: center;
         }
     }
 }
